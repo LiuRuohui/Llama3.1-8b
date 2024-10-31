@@ -1,0 +1,7 @@
+data/HumanEval/utils/
+SambaNova/API Invitation email for HKU.pdf
+SambaNova/SambaNova Cloud QuickStart Guide.pdf
+.idea
+.DS_Store
+
+*/__pycache__/
