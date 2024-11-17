@@ -57,7 +57,7 @@ def code_generation(prompt, retries=100, delay=5):
 
 def generate_with_prompt_quality_1():
     """
-    使用第一种prompt质量生成代码的函数
+    the function without any prompt only with the prompt from the HumanEval
     """
     problems = read_problems()
     prompts = []
@@ -105,13 +105,12 @@ def generate_with_prompt_quality_1():
 
     write_jsonl("prompt_quality_1.baseline.jsonl", generated_solutions)
     result_quality_1 = entry_point("prompt_quality_1.baseline.jsonl", k="1", n_workers=4, timeout=5.0)
-    print(result_quality_1)
     return result_quality_1
 
 
 def generate_with_prompt_quality_2():
     """
-    使用第二种prompt质量生成代码的函数
+    the normal quality of the prompt
     """
     problems = read_problems()
     prompts = []
@@ -122,7 +121,7 @@ def generate_with_prompt_quality_2():
 
     for p in problems:
         task_id = problems[p]["task_id"]
-        prompt = f"详细且明确地描述任务需求，给出一些示例输入输出格式：{problems[p]['prompt']}"
+        prompt = f"Analyze the task requirements unambiguously, output python formats directly\n{problems[p]['prompt']}"
         prompts.append(prompt)
         task_ids.append(task_id)
 
@@ -159,13 +158,12 @@ def generate_with_prompt_quality_2():
 
     write_jsonl("prompt_quality_2.baseline.jsonl", generated_solutions)
     result_quality_2 = entry_point("prompt_quality_2.baseline.jsonl", k="1", n_workers=4, timeout=5.0)
-    print(result_quality_2)
     return result_quality_2
 
 
 def generate_with_prompt_quality_3():
     """
-    使用第三种prompt质量生成代码的函数
+    the best quality of the code
     """
     problems = read_problems()
     prompts = []
@@ -176,7 +174,7 @@ def generate_with_prompt_quality_3():
 
     for p in problems:
         task_id = problems[p]["task_id"]
-        prompt = f"以专家视角详细阐述任务目标、限制条件及可能的解决方案思路，再给出任务需求：{problems[p]['prompt']}"
+        prompt = f"You are a good assistant in solving the code generation problems, please solve it use the prompts provided below\n{problems[p]['prompt']}"
         prompts.append(prompt)
         task_ids.append(task_id)
 
@@ -213,7 +211,6 @@ def generate_with_prompt_quality_3():
 
     write_jsonl("prompt_quality_3.baseline.jsonl", generated_solutions)
     result_quality_3 = entry_point("prompt_quality_3.baseline.jsonl", k="1", n_workers=4, timeout=5.0)
-    print(result_quality_3)
     return result_quality_3
 
 
@@ -221,9 +218,3 @@ if __name__ == '__main__':
     result_1 = generate_with_prompt_quality_1()
     result_2 = generate_with_prompt_quality_2()
     result_3 = generate_with_prompt_quality_3()
-
-    # 这里可以根据返回的result_1、result_2、result_3进一步分析不同prompt质量下的正确率等指标差异
-    # 例如，可以假设result是一个包含正确率信息的字典，然后进行如下比较分析
-    print(f"Prompt Quality 1 Correctness Rate: {result_1['correctness_rate']}")
-    print(f"Prompt Quality 2 Correctness Rate: {result_2['correctness_rate']}")
-    print(f"Prompt Quality 3 Correctness Rate: {result_3['correctness_rate']}")
