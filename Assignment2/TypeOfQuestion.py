@@ -15,10 +15,9 @@ API_KEYS = [
 ]
 api_key_index = 0
 
-# 初始化 OpenAI 客户端
 client = OpenAI(base_url="https://api.sambanova.ai/v1", api_key=API_KEYS[api_key_index])
 
-# 分类类别列表
+# category list
 categories = [
     "Basic Algorithm Problems",
     "Mathematical Problems",
@@ -30,13 +29,10 @@ categories = [
     "Debugging and Code Fixing"
 ]
 
-# 用于存储每个类别的任务 ID
+
 categorized = {category: [] for category in categories}
 
 def categorize_problems_with_id(text, task_id):
-    """
-    根据问题文本判断问题类别，并将任务 ID 分类
-    """
     for category in categories:
         if category in text:
             categorized[category].append(task_id)
@@ -113,12 +109,10 @@ if __name__ == '__main__':
                 "token_count": token_count
             })
 
-            # 分类任务
             categorize_problems_with_id(completion, task_id)
 
             print(f"Task ID: {task_id}, Time: {elapsed_time:.2f}s, Tokens: {token_count}")
 
-    # 输出每个类别的任务 ID
     for category, task_ids in categorized.items():
         print(f"\n{category} task_ids: {task_ids}")
 

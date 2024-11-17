@@ -1,164 +1,164 @@
-{"task_id": "HumanEval/0", "output": "Data Structure Related Problems", "elapsed_time": 1.0358026027679443, "token_count": 4}
-{"task_id": "HumanEval/1", "output": "Data Structure Related Problems", "elapsed_time": 0.24636292457580566, "token_count": 4}
-{"task_id": "HumanEval/2", "output": "Specific Function Implementations", "elapsed_time": 0.27890849113464355, "token_count": 4}
-{"task_id": "HumanEval/3", "output": "Data Structure Related Problems, Logical Reasoning and Conditional Statements", "elapsed_time": 0.26537370681762695, "token_count": 11}
-{"task_id": "HumanEval/4", "output": "Mathematical Problems", "elapsed_time": 0.2873263359069824, "token_count": 4}
-{"task_id": "HumanEval/5", "output": "Specific Function Implementations", "elapsed_time": 0.24566268920898438, "token_count": 4}
-{"task_id": "HumanEval/6", "output": "Data Structure Related Problems, Specific Function Implementations", "elapsed_time": 0.2429807186126709, "token_count": 9}
-{"task_id": "HumanEval/7", "output": "Specific Function Implementations", "elapsed_time": 0.317429780960083, "token_count": 4}
-{"task_id": "HumanEval/8", "output": "Specific Function Implementations", "elapsed_time": 0.2576894760131836, "token_count": 4}
-{"task_id": "HumanEval/9", "output": "Data Structure Related Problems", "elapsed_time": 0.2746877670288086, "token_count": 4}
-{"task_id": "HumanEval/10", "output": "String Operations", "elapsed_time": 0.2625131607055664, "token_count": 2}
-{"task_id": "HumanEval/11", "output": "Specific Function Implementations", "elapsed_time": 0.2491130828857422, "token_count": 4}
-{"task_id": "HumanEval/12", "output": "Data Structure Related Problems", "elapsed_time": 0.24853181838989258, "token_count": 4}
-{"task_id": "HumanEval/13", "output": "Specific Function Implementations", "elapsed_time": 0.28621959686279297, "token_count": 4}
-{"task_id": "HumanEval/14", "output": "Specific Function Implementations", "elapsed_time": 0.2997417449951172, "token_count": 4}
-{"task_id": "HumanEval/15", "output": "Specific Function Implementations", "elapsed_time": 0.2711060047149658, "token_count": 4}
-{"task_id": "HumanEval/16", "output": "Specific Function Implementations", "elapsed_time": 0.26906919479370117, "token_count": 4}
-{"task_id": "HumanEval/17", "output": "Data Structure Related Problems, String Operations", "elapsed_time": 0.2468109130859375, "token_count": 7}
-{"task_id": "HumanEval/18", "output": "String Operations", "elapsed_time": 0.2962210178375244, "token_count": 2}
-{"task_id": "HumanEval/19", "output": "Specific Function Implementations", "elapsed_time": 0.25356316566467285, "token_count": 4}
-{"task_id": "HumanEval/20", "output": "Data Structure Related Problems", "elapsed_time": 0.25902533531188965, "token_count": 4}
-{"task_id": "HumanEval/21", "output": "Specific Function Implementations", "elapsed_time": 0.37162280082702637, "token_count": 4}
-{"task_id": "HumanEval/22", "output": "Specific Function Implementations", "elapsed_time": 0.2838759422302246, "token_count": 4}
-{"task_id": "HumanEval/23", "output": "Specific Function Implementations", "elapsed_time": 0.2729358673095703, "token_count": 4}
-{"task_id": "HumanEval/24", "output": "Mathematical Problems", "elapsed_time": 0.3460564613342285, "token_count": 4}
-{"task_id": "HumanEval/25", "output": "Data Structure Related Problems, Specific Function Implementations", "elapsed_time": 0.2555363178253174, "token_count": 9}
-{"task_id": "HumanEval/26", "output": "Data Structure Related Problems", "elapsed_time": 0.24769806861877441, "token_count": 4}
-{"task_id": "HumanEval/27", "output": "Specific Function Implementations", "elapsed_time": 0.24453258514404297, "token_count": 4}
-{"task_id": "HumanEval/28", "output": "Specific Function Implementations", "elapsed_time": 0.26183056831359863, "token_count": 4}
-{"task_id": "HumanEval/29", "output": "String Operations", "elapsed_time": 0.27923154830932617, "token_count": 2}
-{"task_id": "HumanEval/30", "output": "Data Structure Related Problems", "elapsed_time": 5.70372462272644, "token_count": 4}
-{"task_id": "HumanEval/31", "output": "Specific Function Implementations", "elapsed_time": 0.25134706497192383, "token_count": 4}
-{"task_id": "HumanEval/32", "output": "Specific Function Implementations", "elapsed_time": 0.24262571334838867, "token_count": 4}
-{"task_id": "HumanEval/33", "output": "Data Structure Related Problems", "elapsed_time": 0.3003506660461426, "token_count": 4}
-{"task_id": "HumanEval/34", "output": "Data Structure Related Problems", "elapsed_time": 0.24852991104125977, "token_count": 4}
-{"task_id": "HumanEval/35", "output": "Specific Function Implementations", "elapsed_time": 0.2580742835998535, "token_count": 4}
-{"task_id": "HumanEval/36", "output": "Specific Function Implementations", "elapsed_time": 0.2450864315032959, "token_count": 4}
-{"task_id": "HumanEval/37", "output": "Data Structure Related Problems", "elapsed_time": 0.24183416366577148, "token_count": 4}
-{"task_id": "HumanEval/38", "output": "Data Structure Related Problems, String Operations", "elapsed_time": 0.28818440437316895, "token_count": 7}
-{"task_id": "HumanEval/39", "output": "Mathematical Problems", "elapsed_time": 0.40964174270629883, "token_count": 4}
-{"task_id": "HumanEval/40", "output": "Data Structure Related Problems", "elapsed_time": 0.27170801162719727, "token_count": 4}
-{"task_id": "HumanEval/41", "output": "Data Structure Related Problems", "elapsed_time": 0.28924107551574707, "token_count": 4}
-{"task_id": "HumanEval/42", "output": "Specific Function Implementations", "elapsed_time": 0.2624237537384033, "token_count": 4}
-{"task_id": "HumanEval/43", "output": "Logical Reasoning and Conditional Statements", "elapsed_time": 0.28534388542175293, "token_count": 6}
-{"task_id": "HumanEval/44", "output": "Specific Function Implementations", "elapsed_time": 0.26145291328430176, "token_count": 4}
-{"task_id": "HumanEval/45", "output": "Specific Function Implementations", "elapsed_time": 0.2749810218811035, "token_count": 4}
-{"task_id": "HumanEval/46", "output": "Specific Function Implementations", "elapsed_time": 0.2636072635650635, "token_count": 4}
-{"task_id": "HumanEval/47", "output": "Mathematical Problems", "elapsed_time": 0.2511420249938965, "token_count": 4}
-{"task_id": "HumanEval/48", "output": "String Operations", "elapsed_time": 0.4344217777252197, "token_count": 2}
-{"task_id": "HumanEval/49", "output": "Specific Function Implementations", "elapsed_time": 0.256119966506958, "token_count": 4}
-{"task_id": "HumanEval/50", "output": "Specific Function Implementations", "elapsed_time": 0.3025932312011719, "token_count": 4}
-{"task_id": "HumanEval/51", "output": "String Operations", "elapsed_time": 0.3590383529663086, "token_count": 2}
-{"task_id": "HumanEval/52", "output": "Mathematical Problems, Data Structure Related Problems", "elapsed_time": 0.24631905555725098, "token_count": 9}
-{"task_id": "HumanEval/53", "output": "Specific Function Implementations", "elapsed_time": 0.29646754264831543, "token_count": 4}
-{"task_id": "HumanEval/54", "output": "String Operations", "elapsed_time": 0.31322407722473145, "token_count": 2}
-{"task_id": "HumanEval/55", "output": "Specific Function Implementations", "elapsed_time": 0.24913501739501953, "token_count": 4}
-{"task_id": "HumanEval/56", "output": "Data Structure Related Problems, String Operations", "elapsed_time": 0.2871997356414795, "token_count": 7}
-{"task_id": "HumanEval/57", "output": "Specific Function Implementations", "elapsed_time": 0.27859067916870117, "token_count": 4}
-{"task_id": "HumanEval/58", "output": "Data Structure Related Problems", "elapsed_time": 0.24281954765319824, "token_count": 4}
-{"task_id": "HumanEval/59", "output": "Specific Function Implementations", "elapsed_time": 0.2362351417541504, "token_count": 4}
-{"task_id": "HumanEval/60", "output": "Specific Function Implementations", "elapsed_time": 10.076088190078735, "token_count": 4}
-{"task_id": "HumanEval/61", "output": "Data Structure Related Problems, String Operations", "elapsed_time": 0.25453782081604004, "token_count": 7}
-{"task_id": "HumanEval/62", "output": "Specific Function Implementations", "elapsed_time": 0.2923562526702881, "token_count": 4}
-{"task_id": "HumanEval/63", "output": "Specific Function Implementations", "elapsed_time": 0.24521780014038086, "token_count": 4}
-{"task_id": "HumanEval/64", "output": "Specific Function Implementations", "elapsed_time": 0.29921483993530273, "token_count": 4}
-{"task_id": "HumanEval/65", "output": "Specific Function Implementations", "elapsed_time": 0.2660348415374756, "token_count": 4}
-{"task_id": "HumanEval/66", "output": "Specific Function Implementations", "elapsed_time": 0.2890157699584961, "token_count": 4}
-{"task_id": "HumanEval/67", "output": "Data Structure Related Problems, String Operations", "elapsed_time": 0.2432861328125, "token_count": 7}
-{"task_id": "HumanEval/68", "output": "Data Structure Related Problems, Mathematical Problems", "elapsed_time": 0.2710890769958496, "token_count": 7}
-{"task_id": "HumanEval/69", "output": "Data Structure Related Problems, Mathematical Problems", "elapsed_time": 0.28670477867126465, "token_count": 7}
-{"task_id": "HumanEval/70", "output": "Data Structure Related Problems", "elapsed_time": 0.32059478759765625, "token_count": 4}
-{"task_id": "HumanEval/71", "output": "Specific Function Implementations", "elapsed_time": 0.25200986862182617, "token_count": 4}
-{"task_id": "HumanEval/72", "output": "Data Structure Related Problems, Mathematical Problems", "elapsed_time": 0.3295474052429199, "token_count": 7}
-{"task_id": "HumanEval/73", "output": "Data Structure Related Problems, Mathematical Problems", "elapsed_time": 0.2537059783935547, "token_count": 7}
-{"task_id": "HumanEval/74", "output": "Data Structure Related Problems", "elapsed_time": 0.24092555046081543, "token_count": 4}
-{"task_id": "HumanEval/75", "output": "Data Structure Related Problems, Mathematical Problems", "elapsed_time": 0.27417445182800293, "token_count": 7}
-{"task_id": "HumanEval/76", "output": "Mathematical Problems", "elapsed_time": 0.2433023452758789, "token_count": 4}
-{"task_id": "HumanEval/77", "output": "Data Structure Related Problems, Mathematical Problems", "elapsed_time": 0.2543067932128906, "token_count": 7}
-{"task_id": "HumanEval/78", "output": "Specific Function Implementations", "elapsed_time": 0.8042652606964111, "token_count": 4}
-{"task_id": "HumanEval/79", "output": "Data Structure Related Problems, String Operations", "elapsed_time": 0.24724459648132324, "token_count": 7}
-{"task_id": "HumanEval/80", "output": "Data Structure Related Problems, String Operations", "elapsed_time": 0.2555525302886963, "token_count": 7}
-{"task_id": "HumanEval/81", "output": "Data Structure Related Problems, Specific Function Implementations", "elapsed_time": 0.2427833080291748, "token_count": 9}
-{"task_id": "HumanEval/82", "output": "Data Structure Related Problems, Mathematical Problems", "elapsed_time": 0.26961493492126465, "token_count": 7}
-{"task_id": "HumanEval/83", "output": "Specific Function Implementations", "elapsed_time": 0.26551151275634766, "token_count": 4}
-{"task_id": "HumanEval/84", "output": "Mathematical Problems, Specific Function Implementations", "elapsed_time": 0.4084455966949463, "token_count": 9}
-{"task_id": "HumanEval/85", "output": "Data Structure Related Problems", "elapsed_time": 0.3130679130554199, "token_count": 4}
-{"task_id": "HumanEval/86", "output": "Data Structure Related Problems, String Operations", "elapsed_time": 0.2727477550506592, "token_count": 7}
-{"task_id": "HumanEval/87", "output": "Data Structure Related Problems", "elapsed_time": 0.36008524894714355, "token_count": 4}
-{"task_id": "HumanEval/88", "output": "Specific Function Implementations", "elapsed_time": 0.2485036849975586, "token_count": 4}
-{"task_id": "HumanEval/89", "output": "Data Structure Related Problems, String Operations", "elapsed_time": 0.2766439914703369, "token_count": 7}
-{"task_id": "HumanEval/90", "output": "Data Structure Related Problems", "elapsed_time": 19.687642097473145, "token_count": 4}
-{"task_id": "HumanEval/91", "output": "String Operations", "elapsed_time": 0.24919509887695312, "token_count": 2}
-{"task_id": "HumanEval/92", "output": "Specific Function Implementations", "elapsed_time": 0.31500744819641113, "token_count": 4}
-{"task_id": "HumanEval/93", "output": "Specific Function Implementations", "elapsed_time": 0.24636363983154297, "token_count": 4}
-{"task_id": "HumanEval/94", "output": "Data Structure Related Problems, Mathematical Problems", "elapsed_time": 0.25017547607421875, "token_count": 7}
-{"task_id": "HumanEval/95", "output": "Data Structure Related Problems", "elapsed_time": 0.2557485103607178, "token_count": 4}
-{"task_id": "HumanEval/96", "output": "Data Structure Related Problems, Specific Function Implementations", "elapsed_time": 0.3272264003753662, "token_count": 9}
-{"task_id": "HumanEval/97", "output": "Specific Function Implementations", "elapsed_time": 0.26290154457092285, "token_count": 4}
-{"task_id": "HumanEval/98", "output": "String Operations", "elapsed_time": 0.24358415603637695, "token_count": 2}
-{"task_id": "HumanEval/99", "output": "Specific Function Implementations", "elapsed_time": 0.3276369571685791, "token_count": 4}
-{"task_id": "HumanEval/100", "output": "Specific Function Implementations", "elapsed_time": 0.25675296783447266, "token_count": 4}
-{"task_id": "HumanEval/101", "output": "String Operations", "elapsed_time": 0.24310970306396484, "token_count": 2}
-{"task_id": "HumanEval/102", "output": "Specific Function Implementations", "elapsed_time": 0.24742841720581055, "token_count": 4}
-{"task_id": "HumanEval/103", "output": "Data Structure Related Problems, Mathematical Problems, Specific Function Implementations", "elapsed_time": 0.26795363426208496, "token_count": 12}
-{"task_id": "HumanEval/104", "output": "Data Structure Related Problems, String Operations, Logical Reasoning and Conditional Statements", "elapsed_time": 0.2543954849243164, "token_count": 14}
-{"task_id": "HumanEval/105", "output": "Specific Function Implementations, Data Structure Related Problems", "elapsed_time": 0.2679009437561035, "token_count": 9}
-{"task_id": "HumanEval/106", "output": "Data Structure Related Problems, Specific Function Implementations", "elapsed_time": 0.2691175937652588, "token_count": 9}
-{"task_id": "HumanEval/107", "output": "Data Structure Related Problems, Mathematical Problems", "elapsed_time": 0.2583596706390381, "token_count": 7}
-{"task_id": "HumanEval/108", "output": "Data Structure Related Problems, Mathematical Problems", "elapsed_time": 0.24904704093933105, "token_count": 7}
-{"task_id": "HumanEval/109", "output": "Data Structure Related Problems, Logical Reasoning and Conditional Statements", "elapsed_time": 0.2840285301208496, "token_count": 11}
-{"task_id": "HumanEval/110", "output": "Data Structure Related Problems, Mathematical Problems", "elapsed_time": 0.2639503479003906, "token_count": 7}
-{"task_id": "HumanEval/111", "output": "Data Structure Related Problems", "elapsed_time": 0.2745687961578369, "token_count": 4}
-{"task_id": "HumanEval/112", "output": "Data Structure Related Problems, String Operations", "elapsed_time": 0.27480387687683105, "token_count": 7}
-{"task_id": "HumanEval/113", "output": "Data Structure Related Problems, String Operations", "elapsed_time": 0.3566162586212158, "token_count": 7}
-{"task_id": "HumanEval/114", "output": "Specific Function Implementations", "elapsed_time": 0.2719101905822754, "token_count": 4}
-{"task_id": "HumanEval/115", "output": "Data Structure Related Problems, Mathematical Problems", "elapsed_time": 0.2445847988128662, "token_count": 7}
-{"task_id": "HumanEval/116", "output": "Data Structure Related Problems, String Operations, Logical Reasoning and Conditional Statements", "elapsed_time": 0.25661492347717285, "token_count": 14}
-{"task_id": "HumanEval/117", "output": "Data Structure Related Problems, String Operations", "elapsed_time": 0.2788815498352051, "token_count": 7}
-{"task_id": "HumanEval/118", "output": "Data Structure Related Problems, String Operations", "elapsed_time": 0.3033106327056885, "token_count": 7}
-{"task_id": "HumanEval/119", "output": "Data Structure Related Problems, String Operations", "elapsed_time": 0.2629523277282715, "token_count": 7}
-{"task_id": "HumanEval/120", "output": "Data Structure Related Problems", "elapsed_time": 5.454577684402466, "token_count": 4}
-{"task_id": "HumanEval/121", "output": "Data Structure Related Problems, Mathematical Problems", "elapsed_time": 0.29925107955932617, "token_count": 7}
-{"task_id": "HumanEval/122", "output": "Specific Function Implementations", "elapsed_time": 0.2763051986694336, "token_count": 4}
-{"task_id": "HumanEval/123", "output": "Specific Function Implementations", "elapsed_time": 0.23346424102783203, "token_count": 4}
-{"task_id": "HumanEval/124", "output": "Data Structure Related Problems, String Operations, Logical Reasoning and Conditional Statements", "elapsed_time": 0.2492537498474121, "token_count": 14}
-{"task_id": "HumanEval/125", "output": "Data Structure Related Problems, String Operations", "elapsed_time": 0.2882976531982422, "token_count": 7}
-{"task_id": "HumanEval/126", "output": "Data Structure Related Problems", "elapsed_time": 0.2511618137359619, "token_count": 4}
-{"task_id": "HumanEval/127", "output": "Mathematical Problems, Specific Function Implementations", "elapsed_time": 0.2619609832763672, "token_count": 9}
-{"task_id": "HumanEval/128", "output": "Specific Function Implementations", "elapsed_time": 0.2944915294647217, "token_count": 4}
-{"task_id": "HumanEval/129", "output": "Data Structure Related Problems, Specific Function Implementations", "elapsed_time": 0.24811291694641113, "token_count": 9}
-{"task_id": "HumanEval/130", "output": "Data Structure Related Problems, Specific Function Implementations", "elapsed_time": 0.25070977210998535, "token_count": 9}
-{"task_id": "HumanEval/131", "output": "Specific Function Implementations", "elapsed_time": 0.2974536418914795, "token_count": 4}
-{"task_id": "HumanEval/132", "output": "Data Structure Related Problems", "elapsed_time": 0.28845953941345215, "token_count": 4}
-{"task_id": "HumanEval/133", "output": "Data Structure Related Problems, Mathematical Problems, Specific Function Implementations", "elapsed_time": 0.3076612949371338, "token_count": 12}
-{"task_id": "HumanEval/134", "output": "Data Structure Related Problems, String Operations", "elapsed_time": 0.24714875221252441, "token_count": 7}
-{"task_id": "HumanEval/135", "output": "Data Structure Related Problems, Mathematical Problems", "elapsed_time": 0.36225461959838867, "token_count": 7}
-{"task_id": "HumanEval/136", "output": "Data Structure Related Problems", "elapsed_time": 0.27667880058288574, "token_count": 4}
-{"task_id": "HumanEval/137", "output": "Data Structure Related Problems, Specific Function Implementations", "elapsed_time": 0.319563627243042, "token_count": 9}
-{"task_id": "HumanEval/138", "output": "Mathematical Problems, Logical Reasoning and Conditional Statements", "elapsed_time": 0.303586483001709, "token_count": 11}
-{"task_id": "HumanEval/139", "output": "Specific Function Implementations", "elapsed_time": 0.2866940498352051, "token_count": 4}
-{"task_id": "HumanEval/140", "output": "Data Structure Related Problems, String Operations", "elapsed_time": 0.24542236328125, "token_count": 7}
-{"task_id": "HumanEval/141", "output": "Data Structure Related Problems, String Operations, Logical Reasoning and Conditional Statements", "elapsed_time": 0.2617604732513428, "token_count": 14}
-{"task_id": "HumanEval/142", "output": "Data Structure Related Problems, Specific Function Implementations", "elapsed_time": 0.2979445457458496, "token_count": 9}
-{"task_id": "HumanEval/143", "output": "Data Structure Related Problems, String Operations", "elapsed_time": 0.26816248893737793, "token_count": 7}
-{"task_id": "HumanEval/144", "output": "Data Structure Related Problems, Mathematical Problems", "elapsed_time": 0.2424027919769287, "token_count": 7}
-{"task_id": "HumanEval/145", "output": "Data Structure Related Problems", "elapsed_time": 0.2733442783355713, "token_count": 4}
-{"task_id": "HumanEval/146", "output": "Data Structure Related Problems, Mathematical Problems", "elapsed_time": 0.24889230728149414, "token_count": 7}
-{"task_id": "HumanEval/147", "output": "Mathematical Problems", "elapsed_time": 0.23885655403137207, "token_count": 4}
-{"task_id": "HumanEval/148", "output": "Data Structure Related Problems, String Operations, Logical Reasoning and Conditional Statements", "elapsed_time": 0.23827290534973145, "token_count": 14}
-{"task_id": "HumanEval/149", "output": "Data Structure Related Problems, String Operations, Logical Reasoning and Conditional Statements", "elapsed_time": 0.2502553462982178, "token_count": 14}
-{"task_id": "HumanEval/150", "output": "Mathematical Problems, Specific Function Implementations", "elapsed_time": 5.3415467739105225, "token_count": 9}
-{"task_id": "HumanEval/151", "output": "Data Structure Related Problems, Mathematical Problems", "elapsed_time": 0.2946951389312744, "token_count": 7}
-{"task_id": "HumanEval/152", "output": "Data Structure Related Problems, Mathematical Problems", "elapsed_time": 0.27051711082458496, "token_count": 7}
-{"task_id": "HumanEval/153", "output": "Data Structure Related Problems, Specific Function Implementations", "elapsed_time": 0.24904370307922363, "token_count": 9}
-{"task_id": "HumanEval/154", "output": "Data Structure Related Problems, String Operations", "elapsed_time": 0.30007147789001465, "token_count": 7}
-{"task_id": "HumanEval/155", "output": "Data Structure Related Problems, Specific Function Implementations", "elapsed_time": 0.29972124099731445, "token_count": 9}
-{"task_id": "HumanEval/156", "output": "String Operations", "elapsed_time": 0.2867603302001953, "token_count": 2}
-{"task_id": "HumanEval/157", "output": "Mathematical Problems", "elapsed_time": 0.25408315658569336, "token_count": 4}
-{"task_id": "HumanEval/158", "output": "Data Structure Related Problems, String Operations", "elapsed_time": 0.2969377040863037, "token_count": 7}
-{"task_id": "HumanEval/159", "output": "Data Structure Related Problems, Mathematical Problems", "elapsed_time": 0.2636070251464844, "token_count": 7}
-{"task_id": "HumanEval/160", "output": "Data Structure Related Problems, Specific Function Implementations", "elapsed_time": 0.29148411750793457, "token_count": 9}
-{"task_id": "HumanEval/161", "output": "Data Structure Related Problems, String Operations", "elapsed_time": 0.2572786808013916, "token_count": 7}
-{"task_id": "HumanEval/162", "output": "Specific Function Implementations", "elapsed_time": 0.27159786224365234, "token_count": 4}
-{"task_id": "HumanEval/163", "output": "Specific Function Implementations", "elapsed_time": 0.23477554321289062, "token_count": 4}
+{"task_id": "HumanEval/0", "output": "Data Structure Related Problems", "elapsed_time": 0.9860758781433105, "token_count": 4}
+{"task_id": "HumanEval/1", "output": "Data Structure Related Problems", "elapsed_time": 0.32033586502075195, "token_count": 4}
+{"task_id": "HumanEval/2", "output": "Specific Function Implementations", "elapsed_time": 0.27339625358581543, "token_count": 4}
+{"task_id": "HumanEval/3", "output": "Data Structure Related Problems, Logical Reasoning and Conditional Statements", "elapsed_time": 0.2510707378387451, "token_count": 11}
+{"task_id": "HumanEval/4", "output": "Mathematical Problems", "elapsed_time": 0.3449687957763672, "token_count": 4}
+{"task_id": "HumanEval/5", "output": "Specific Function Implementations", "elapsed_time": 0.2581207752227783, "token_count": 4}
+{"task_id": "HumanEval/6", "output": "Data Structure Related Problems, Specific Function Implementations", "elapsed_time": 0.31789398193359375, "token_count": 9}
+{"task_id": "HumanEval/7", "output": "String Operations", "elapsed_time": 0.2883181571960449, "token_count": 2}
+{"task_id": "HumanEval/8", "output": "Specific Function Implementations", "elapsed_time": 0.25015807151794434, "token_count": 4}
+{"task_id": "HumanEval/9", "output": "Data Structure Related Problems", "elapsed_time": 0.2856175899505615, "token_count": 4}
+{"task_id": "HumanEval/10", "output": "String Operations", "elapsed_time": 0.36713147163391113, "token_count": 2}
+{"task_id": "HumanEval/11", "output": "Specific Function Implementations", "elapsed_time": 0.34215402603149414, "token_count": 4}
+{"task_id": "HumanEval/12", "output": "Data Structure Related Problems", "elapsed_time": 0.279188871383667, "token_count": 4}
+{"task_id": "HumanEval/13", "output": "Specific Function Implementations", "elapsed_time": 0.417238712310791, "token_count": 4}
+{"task_id": "HumanEval/14", "output": "Specific Function Implementations", "elapsed_time": 0.27373623847961426, "token_count": 4}
+{"task_id": "HumanEval/15", "output": "Specific Function Implementations", "elapsed_time": 0.30945873260498047, "token_count": 4}
+{"task_id": "HumanEval/16", "output": "Specific Function Implementations", "elapsed_time": 0.24799513816833496, "token_count": 4}
+{"task_id": "HumanEval/17", "output": "Data Structure Related Problems, String Operations", "elapsed_time": 0.5784335136413574, "token_count": 7}
+{"task_id": "HumanEval/18", "output": "String Operations", "elapsed_time": 0.2701239585876465, "token_count": 2}
+{"task_id": "HumanEval/19", "output": "Specific Function Implementations", "elapsed_time": 0.2901921272277832, "token_count": 4}
+{"task_id": "HumanEval/20", "output": "Data Structure Related Problems", "elapsed_time": 0.2717854976654053, "token_count": 4}
+{"task_id": "HumanEval/21", "output": "Specific Function Implementations", "elapsed_time": 0.28482747077941895, "token_count": 4}
+{"task_id": "HumanEval/22", "output": "Specific Function Implementations", "elapsed_time": 0.2948112487792969, "token_count": 4}
+{"task_id": "HumanEval/23", "output": "Specific Function Implementations", "elapsed_time": 0.2643778324127197, "token_count": 4}
+{"task_id": "HumanEval/24", "output": "Mathematical Problems", "elapsed_time": 0.2984306812286377, "token_count": 4}
+{"task_id": "HumanEval/25", "output": "Data Structure Related Problems, Specific Function Implementations", "elapsed_time": 0.2546529769897461, "token_count": 9}
+{"task_id": "HumanEval/26", "output": "Data Structure Related Problems", "elapsed_time": 0.2743380069732666, "token_count": 4}
+{"task_id": "HumanEval/27", "output": "Specific Function Implementations", "elapsed_time": 0.2706153392791748, "token_count": 4}
+{"task_id": "HumanEval/28", "output": "Specific Function Implementations", "elapsed_time": 0.28805971145629883, "token_count": 4}
+{"task_id": "HumanEval/29", "output": "String Operations", "elapsed_time": 0.37352585792541504, "token_count": 2}
+{"task_id": "HumanEval/30", "output": "Data Structure Related Problems", "elapsed_time": 5.614994525909424, "token_count": 4}
+{"task_id": "HumanEval/31", "output": "Specific Function Implementations", "elapsed_time": 0.5011692047119141, "token_count": 4}
+{"task_id": "HumanEval/32", "output": "Specific Function Implementations", "elapsed_time": 0.6608395576477051, "token_count": 4}
+{"task_id": "HumanEval/33", "output": "Data Structure Related Problems", "elapsed_time": 0.46085023880004883, "token_count": 4}
+{"task_id": "HumanEval/34", "output": "Data Structure Related Problems", "elapsed_time": 0.3463582992553711, "token_count": 4}
+{"task_id": "HumanEval/35", "output": "Specific Function Implementations", "elapsed_time": 0.30565547943115234, "token_count": 4}
+{"task_id": "HumanEval/36", "output": "Specific Function Implementations", "elapsed_time": 0.30782341957092285, "token_count": 4}
+{"task_id": "HumanEval/37", "output": "Data Structure Related Problems", "elapsed_time": 0.29086732864379883, "token_count": 4}
+{"task_id": "HumanEval/38", "output": "Data Structure Related Problems, String Operations", "elapsed_time": 0.29663705825805664, "token_count": 7}
+{"task_id": "HumanEval/39", "output": "Mathematical Problems", "elapsed_time": 0.2476029396057129, "token_count": 4}
+{"task_id": "HumanEval/40", "output": "Data Structure Related Problems", "elapsed_time": 0.33884263038635254, "token_count": 4}
+{"task_id": "HumanEval/41", "output": "Data Structure Related Problems", "elapsed_time": 0.36194682121276855, "token_count": 4}
+{"task_id": "HumanEval/42", "output": "Specific Function Implementations", "elapsed_time": 0.2451169490814209, "token_count": 4}
+{"task_id": "HumanEval/43", "output": "Logical Reasoning and Conditional Statements", "elapsed_time": 0.2420487403869629, "token_count": 6}
+{"task_id": "HumanEval/44", "output": "Specific Function Implementations", "elapsed_time": 0.5180714130401611, "token_count": 4}
+{"task_id": "HumanEval/45", "output": "Specific Function Implementations", "elapsed_time": 0.29894590377807617, "token_count": 4}
+{"task_id": "HumanEval/46", "output": "Specific Function Implementations", "elapsed_time": 0.3055300712585449, "token_count": 4}
+{"task_id": "HumanEval/47", "output": "Mathematical Problems", "elapsed_time": 0.24807000160217285, "token_count": 4}
+{"task_id": "HumanEval/48", "output": "String Operations", "elapsed_time": 0.24575138092041016, "token_count": 2}
+{"task_id": "HumanEval/49", "output": "Specific Function Implementations", "elapsed_time": 0.27428388595581055, "token_count": 4}
+{"task_id": "HumanEval/50", "output": "Specific Function Implementations", "elapsed_time": 0.26613330841064453, "token_count": 4}
+{"task_id": "HumanEval/51", "output": "String Operations", "elapsed_time": 0.2482130527496338, "token_count": 2}
+{"task_id": "HumanEval/52", "output": "Mathematical Problems, Data Structure Related Problems", "elapsed_time": 0.2738993167877197, "token_count": 9}
+{"task_id": "HumanEval/53", "output": "Specific Function Implementations", "elapsed_time": 0.2637033462524414, "token_count": 4}
+{"task_id": "HumanEval/54", "output": "String Operations", "elapsed_time": 0.37353944778442383, "token_count": 2}
+{"task_id": "HumanEval/55", "output": "Specific Function Implementations", "elapsed_time": 0.6398417949676514, "token_count": 4}
+{"task_id": "HumanEval/56", "output": "Data Structure Related Problems, String Operations", "elapsed_time": 0.24631047248840332, "token_count": 7}
+{"task_id": "HumanEval/57", "output": "Specific Function Implementations", "elapsed_time": 0.3051891326904297, "token_count": 4}
+{"task_id": "HumanEval/58", "output": "Data Structure Related Problems", "elapsed_time": 0.2989320755004883, "token_count": 4}
+{"task_id": "HumanEval/59", "output": "Specific Function Implementations", "elapsed_time": 0.5627212524414062, "token_count": 4}
+{"task_id": "HumanEval/60", "output": "Specific Function Implementations", "elapsed_time": 5.627828359603882, "token_count": 4}
+{"task_id": "HumanEval/61", "output": "Data Structure Related Problems, String Operations", "elapsed_time": 0.24506068229675293, "token_count": 7}
+{"task_id": "HumanEval/62", "output": "Specific Function Implementations", "elapsed_time": 0.9803900718688965, "token_count": 4}
+{"task_id": "HumanEval/63", "output": "Specific Function Implementations", "elapsed_time": 0.29612135887145996, "token_count": 4}
+{"task_id": "HumanEval/64", "output": "Specific Function Implementations", "elapsed_time": 0.2471780776977539, "token_count": 4}
+{"task_id": "HumanEval/65", "output": "Specific Function Implementations", "elapsed_time": 0.24495506286621094, "token_count": 4}
+{"task_id": "HumanEval/66", "output": "Specific Function Implementations", "elapsed_time": 0.2851378917694092, "token_count": 4}
+{"task_id": "HumanEval/67", "output": "Data Structure Related Problems, String Operations", "elapsed_time": 0.2695133686065674, "token_count": 7}
+{"task_id": "HumanEval/68", "output": "Data Structure Related Problems, Mathematical Problems", "elapsed_time": 0.25187158584594727, "token_count": 7}
+{"task_id": "HumanEval/69", "output": "Data Structure Related Problems, Mathematical Problems", "elapsed_time": 0.24502086639404297, "token_count": 7}
+{"task_id": "HumanEval/70", "output": "Data Structure Related Problems", "elapsed_time": 0.45143604278564453, "token_count": 4}
+{"task_id": "HumanEval/71", "output": "Specific Function Implementations", "elapsed_time": 0.24569153785705566, "token_count": 4}
+{"task_id": "HumanEval/72", "output": "Data Structure Related Problems, Mathematical Problems", "elapsed_time": 0.24842286109924316, "token_count": 7}
+{"task_id": "HumanEval/73", "output": "Data Structure Related Problems, Mathematical Problems", "elapsed_time": 0.49791574478149414, "token_count": 7}
+{"task_id": "HumanEval/74", "output": "Data Structure Related Problems", "elapsed_time": 0.5686450004577637, "token_count": 4}
+{"task_id": "HumanEval/75", "output": "Data Structure Related Problems, Mathematical Problems", "elapsed_time": 0.4350736141204834, "token_count": 7}
+{"task_id": "HumanEval/76", "output": "Mathematical Problems", "elapsed_time": 0.41907691955566406, "token_count": 4}
+{"task_id": "HumanEval/77", "output": "Data Structure Related Problems, Mathematical Problems", "elapsed_time": 0.4099588394165039, "token_count": 7}
+{"task_id": "HumanEval/78", "output": "Specific Function Implementations", "elapsed_time": 0.8849658966064453, "token_count": 4}
+{"task_id": "HumanEval/79", "output": "Data Structure Related Problems, String Operations", "elapsed_time": 3.074516534805298, "token_count": 7}
+{"task_id": "HumanEval/80", "output": "Data Structure Related Problems, String Operations", "elapsed_time": 1.2793049812316895, "token_count": 7}
+{"task_id": "HumanEval/81", "output": "Data Structure Related Problems, Mathematical Problems, Specific Function Implementations", "elapsed_time": 0.7118620872497559, "token_count": 12}
+{"task_id": "HumanEval/82", "output": "Data Structure Related Problems, Mathematical Problems", "elapsed_time": 0.9979512691497803, "token_count": 7}
+{"task_id": "HumanEval/83", "output": "Specific Function Implementations", "elapsed_time": 1.8761823177337646, "token_count": 4}
+{"task_id": "HumanEval/84", "output": "Mathematical Problems, Specific Function Implementations", "elapsed_time": 1.0588366985321045, "token_count": 9}
+{"task_id": "HumanEval/85", "output": "Data Structure Related Problems", "elapsed_time": 0.7302677631378174, "token_count": 4}
+{"task_id": "HumanEval/86", "output": "Data Structure Related Problems, String Operations", "elapsed_time": 0.7163057327270508, "token_count": 7}
+{"task_id": "HumanEval/87", "output": "Data Structure Related Problems", "elapsed_time": 0.5610954761505127, "token_count": 4}
+{"task_id": "HumanEval/88", "output": "Specific Function Implementations", "elapsed_time": 0.8785412311553955, "token_count": 4}
+{"task_id": "HumanEval/89", "output": "Data Structure Related Problems, String Operations", "elapsed_time": 2.2776100635528564, "token_count": 7}
+{"task_id": "HumanEval/90", "output": "Data Structure Related Problems", "elapsed_time": 6.617659568786621, "token_count": 4}
+{"task_id": "HumanEval/91", "output": "String Operations", "elapsed_time": 4.75532865524292, "token_count": 2}
+{"task_id": "HumanEval/92", "output": "Specific Function Implementations", "elapsed_time": 4.3242268562316895, "token_count": 4}
+{"task_id": "HumanEval/93", "output": "Specific Function Implementations", "elapsed_time": 0.6674768924713135, "token_count": 4}
+{"task_id": "HumanEval/94", "output": "Data Structure Related Problems, Mathematical Problems", "elapsed_time": 2.747164487838745, "token_count": 7}
+{"task_id": "HumanEval/95", "output": "Data Structure Related Problems", "elapsed_time": 2.423696517944336, "token_count": 4}
+{"task_id": "HumanEval/96", "output": "Data Structure Related Problems, Specific Function Implementations", "elapsed_time": 0.29665160179138184, "token_count": 9}
+{"task_id": "HumanEval/97", "output": "Specific Function Implementations", "elapsed_time": 0.6052329540252686, "token_count": 4}
+{"task_id": "HumanEval/98", "output": "String Operations", "elapsed_time": 0.5316083431243896, "token_count": 2}
+{"task_id": "HumanEval/99", "output": "Specific Function Implementations", "elapsed_time": 0.2635490894317627, "token_count": 4}
+{"task_id": "HumanEval/100", "output": "Specific Function Implementations", "elapsed_time": 0.25189995765686035, "token_count": 4}
+{"task_id": "HumanEval/101", "output": "String Operations", "elapsed_time": 0.4094083309173584, "token_count": 2}
+{"task_id": "HumanEval/102", "output": "Specific Function Implementations", "elapsed_time": 0.2793891429901123, "token_count": 4}
+{"task_id": "HumanEval/103", "output": "Data Structure Related Problems, Mathematical Problems, Specific Function Implementations", "elapsed_time": 0.8492860794067383, "token_count": 12}
+{"task_id": "HumanEval/104", "output": "Data Structure Related Problems, String Operations, Logical Reasoning and Conditional Statements", "elapsed_time": 0.8988325595855713, "token_count": 14}
+{"task_id": "HumanEval/105", "output": "Specific Function Implementations, Data Structure Related Problems", "elapsed_time": 0.39034342765808105, "token_count": 9}
+{"task_id": "HumanEval/106", "output": "Data Structure Related Problems, Specific Function Implementations", "elapsed_time": 0.4275381565093994, "token_count": 9}
+{"task_id": "HumanEval/107", "output": "Data Structure Related Problems, Mathematical Problems", "elapsed_time": 0.2878403663635254, "token_count": 7}
+{"task_id": "HumanEval/108", "output": "Data Structure Related Problems, Mathematical Problems", "elapsed_time": 0.2969236373901367, "token_count": 7}
+{"task_id": "HumanEval/109", "output": "Data Structure Related Problems, Logical Reasoning and Conditional Statements", "elapsed_time": 0.3208153247833252, "token_count": 11}
+{"task_id": "HumanEval/110", "output": "Data Structure Related Problems, Mathematical Problems", "elapsed_time": 0.4067380428314209, "token_count": 7}
+{"task_id": "HumanEval/111", "output": "Data Structure Related Problems", "elapsed_time": 0.3135664463043213, "token_count": 4}
+{"task_id": "HumanEval/112", "output": "Data Structure Related Problems, String Operations", "elapsed_time": 0.2747471332550049, "token_count": 7}
+{"task_id": "HumanEval/113", "output": "Data Structure Related Problems, String Operations", "elapsed_time": 0.29224061965942383, "token_count": 7}
+{"task_id": "HumanEval/114", "output": "Specific Function Implementations", "elapsed_time": 0.29952239990234375, "token_count": 4}
+{"task_id": "HumanEval/115", "output": "Data Structure Related Problems, Mathematical Problems", "elapsed_time": 0.3248767852783203, "token_count": 7}
+{"task_id": "HumanEval/116", "output": "Data Structure Related Problems, String Operations, Logical Reasoning and Conditional Statements", "elapsed_time": 0.2849709987640381, "token_count": 14}
+{"task_id": "HumanEval/117", "output": "Data Structure Related Problems, String Operations", "elapsed_time": 0.28345179557800293, "token_count": 7}
+{"task_id": "HumanEval/118", "output": "Data Structure Related Problems, String Operations", "elapsed_time": 0.25219106674194336, "token_count": 7}
+{"task_id": "HumanEval/119", "output": "Data Structure Related Problems, String Operations", "elapsed_time": 0.32747888565063477, "token_count": 7}
+{"task_id": "HumanEval/120", "output": "Data Structure Related Problems", "elapsed_time": 5.802515029907227, "token_count": 4}
+{"task_id": "HumanEval/121", "output": "Data Structure Related Problems, Mathematical Problems", "elapsed_time": 0.24591755867004395, "token_count": 7}
+{"task_id": "HumanEval/122", "output": "Specific Function Implementations", "elapsed_time": 0.24446988105773926, "token_count": 4}
+{"task_id": "HumanEval/123", "output": "Specific Function Implementations", "elapsed_time": 0.2535257339477539, "token_count": 4}
+{"task_id": "HumanEval/124", "output": "Data Structure Related Problems, String Operations, Logical Reasoning and Conditional Statements", "elapsed_time": 0.25099802017211914, "token_count": 14}
+{"task_id": "HumanEval/125", "output": "Data Structure Related Problems, String Operations", "elapsed_time": 0.2441248893737793, "token_count": 7}
+{"task_id": "HumanEval/126", "output": "Data Structure Related Problems", "elapsed_time": 0.23866748809814453, "token_count": 4}
+{"task_id": "HumanEval/127", "output": "Mathematical Problems, Specific Function Implementations", "elapsed_time": 0.9022822380065918, "token_count": 9}
+{"task_id": "HumanEval/128", "output": "Specific Function Implementations", "elapsed_time": 0.24692749977111816, "token_count": 4}
+{"task_id": "HumanEval/129", "output": "Data Structure Related Problems, Specific Function Implementations", "elapsed_time": 0.28268861770629883, "token_count": 9}
+{"task_id": "HumanEval/130", "output": "Data Structure Related Problems, Specific Function Implementations", "elapsed_time": 0.2440176010131836, "token_count": 9}
+{"task_id": "HumanEval/131", "output": "Specific Function Implementations", "elapsed_time": 0.26923203468322754, "token_count": 4}
+{"task_id": "HumanEval/132", "output": "Data Structure Related Problems", "elapsed_time": 0.35608386993408203, "token_count": 4}
+{"task_id": "HumanEval/133", "output": "Data Structure Related Problems, Mathematical Problems, Specific Function Implementations", "elapsed_time": 0.2840735912322998, "token_count": 12}
+{"task_id": "HumanEval/134", "output": "Data Structure Related Problems, String Operations", "elapsed_time": 0.34001612663269043, "token_count": 7}
+{"task_id": "HumanEval/135", "output": "Data Structure Related Problems, Mathematical Problems", "elapsed_time": 0.27616119384765625, "token_count": 7}
+{"task_id": "HumanEval/136", "output": "Data Structure Related Problems", "elapsed_time": 0.23641538619995117, "token_count": 4}
+{"task_id": "HumanEval/137", "output": "Data Structure Related Problems, Specific Function Implementations", "elapsed_time": 0.26850080490112305, "token_count": 9}
+{"task_id": "HumanEval/138", "output": "Mathematical Problems, Logical Reasoning and Conditional Statements", "elapsed_time": 0.40312767028808594, "token_count": 11}
+{"task_id": "HumanEval/139", "output": "Specific Function Implementations", "elapsed_time": 0.27116966247558594, "token_count": 4}
+{"task_id": "HumanEval/140", "output": "Data Structure Related Problems, String Operations", "elapsed_time": 0.24831080436706543, "token_count": 7}
+{"task_id": "HumanEval/141", "output": "Data Structure Related Problems, String Operations, Logical Reasoning and Conditional Statements", "elapsed_time": 0.4915659427642822, "token_count": 14}
+{"task_id": "HumanEval/142", "output": "Data Structure Related Problems, Specific Function Implementations", "elapsed_time": 0.2766077518463135, "token_count": 9}
+{"task_id": "HumanEval/143", "output": "Data Structure Related Problems, String Operations", "elapsed_time": 0.3019118309020996, "token_count": 7}
+{"task_id": "HumanEval/144", "output": "Data Structure Related Problems, Mathematical Problems", "elapsed_time": 0.30132341384887695, "token_count": 7}
+{"task_id": "HumanEval/145", "output": "Data Structure Related Problems", "elapsed_time": 0.26788926124572754, "token_count": 4}
+{"task_id": "HumanEval/146", "output": "Data Structure Related Problems, Mathematical Problems", "elapsed_time": 0.2443075180053711, "token_count": 7}
+{"task_id": "HumanEval/147", "output": "Mathematical Problems", "elapsed_time": 0.23557424545288086, "token_count": 4}
+{"task_id": "HumanEval/148", "output": "Data Structure Related Problems, String Operations, Logical Reasoning and Conditional Statements", "elapsed_time": 0.3597245216369629, "token_count": 14}
+{"task_id": "HumanEval/149", "output": "Data Structure Related Problems, String Operations, Logical Reasoning and Conditional Statements", "elapsed_time": 0.24998974800109863, "token_count": 14}
+{"task_id": "HumanEval/150", "output": "Mathematical Problems, Specific Function Implementations", "elapsed_time": 5.597162485122681, "token_count": 9}
+{"task_id": "HumanEval/151", "output": "Data Structure Related Problems, Mathematical Problems", "elapsed_time": 0.5339610576629639, "token_count": 7}
+{"task_id": "HumanEval/152", "output": "Data Structure Related Problems, Mathematical Problems", "elapsed_time": 0.617973804473877, "token_count": 7}
+{"task_id": "HumanEval/153", "output": "Data Structure Related Problems, Specific Function Implementations", "elapsed_time": 0.3458983898162842, "token_count": 9}
+{"task_id": "HumanEval/154", "output": "Data Structure Related Problems, String Operations", "elapsed_time": 0.2655930519104004, "token_count": 7}
+{"task_id": "HumanEval/155", "output": "Data Structure Related Problems, Specific Function Implementations", "elapsed_time": 0.25675177574157715, "token_count": 9}
+{"task_id": "HumanEval/156", "output": "String Operations", "elapsed_time": 0.3588271141052246, "token_count": 2}
+{"task_id": "HumanEval/157", "output": "Mathematical Problems", "elapsed_time": 0.6597428321838379, "token_count": 4}
+{"task_id": "HumanEval/158", "output": "Data Structure Related Problems, String Operations", "elapsed_time": 0.2980341911315918, "token_count": 7}
+{"task_id": "HumanEval/159", "output": "Data Structure Related Problems, Mathematical Problems", "elapsed_time": 0.2753746509552002, "token_count": 7}
+{"task_id": "HumanEval/160", "output": "Data Structure Related Problems, Specific Function Implementations", "elapsed_time": 0.29102516174316406, "token_count": 9}
+{"task_id": "HumanEval/161", "output": "Data Structure Related Problems, String Operations", "elapsed_time": 0.29289817810058594, "token_count": 7}
+{"task_id": "HumanEval/162", "output": "Specific Function Implementations", "elapsed_time": 0.2456812858581543, "token_count": 4}
+{"task_id": "HumanEval/163", "output": "Specific Function Implementations", "elapsed_time": 0.26140475273132324, "token_count": 4}

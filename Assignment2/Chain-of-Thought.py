@@ -205,7 +205,7 @@ if __name__ == '__main__':
                 "prompt": prompt_given,
                 "output": clean_the_wrap(completion),
                 "elapsed_time": elapsed_time,
-                "token_count": token_count
+                "token_count": total_tokens
             })
             print(f"Task ID: {task_id}, Time: {elapsed_time:.2f}s, Tokens: {token_count}")
 
@@ -234,13 +234,13 @@ if __name__ == '__main__':
     for r in results_cot:
         if results_cot[r]["result"] == "passed":
             passed_task_ids_cot.append(results_cot[r]["task_id"])
-    #print(passed_task_ids_cot)
+    print(passed_task_ids_cot)
     for r in results_scot:
         if results_scot[r]["result"] == "passed":
             passed_task_ids_scot.append(results_scot[r]["task_id"])
-    #print(passed_task_ids_scot)
+    print(passed_task_ids_scot)
     for r in results_scot_few:
         if results_scot_few[r]["result"] == "passed":
             passed_task_ids_scot_few.append(results_scot_few[r]["task_id"])
-    #print(passed_task_ids_scot_few)
+    print(passed_task_ids_scot_few)
 
