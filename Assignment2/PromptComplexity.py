@@ -103,24 +103,82 @@ def design_prompt_simple(questionType):
 def design_prompt_medium(questionType):
     specific_prompts = []
     if "Basic Algorithm Problems" in questionType:
-        specific_prompts.append("Solve this problem using basic algorithms. Ensure the code is efficient and easy to understand.")
+        specific_prompts.append("Solve this problem using basic algorithms. Consider using well - known sorting or searching algorithms if applicable. Ensure the code is efficient by analyzing its complexity and easy to understand with proper comments.")
     if "Mathematical Problems" in questionType:
-        specific_prompts.append("Provide a detailed mathematical solution to the following problem.")
+        specific_prompts.append("Provide a detailed mathematical solution to the following problem. Explain each step clearly, showing the reasoning behind the mathematical operations and formulas used.")
     if "Data Structure Related Problems" in questionType:
-        specific_prompts.append("Design an efficient solution using appropriate data structures.")
+        specific_prompts.append("Design an efficient solution using appropriate data structures. Think about the nature of the data and operations required, and choose data structures like arrays, linked lists, or trees accordingly.")
     if "String Operations" in questionType:
-        specific_prompts.append("Solve this string manipulation task with clarity and correctness.")
+        specific_prompts.append("Solve this string manipulation task with clarity and correctness. Pay attention to details such as string length, character encoding, and possible edge cases like empty strings.")
     if "Logical Reasoning and Conditional Statements" in questionType:
-        specific_prompts.append("Apply logical reasoning to address the following problem.")
+        specific_prompts.append("Apply logical reasoning to address the following problem. Break down the problem into smaller logical parts and use conditional statements effectively to handle different scenarios.")
     if "Complexity Analysis" in questionType:
-        specific_prompts.append("Analyze the time and space complexity of the solution after implementing the code.")
+        specific_prompts.append("Analyze the time and space complexity of the solution after implementing the code. Use appropriate methods like Big - O notation to accurately represent the complexity and consider how the complexity might change with different input sizes.")
     if "Specific Function Implementations" in questionType:
-        specific_prompts.append("Implement the specific function described in the prompt with proper error handling.")
+        specific_prompts.append("Implement the specific function described in the prompt with proper error handling. Anticipate possible errors such as invalid inputs and handle them gracefully to prevent the program from crashing.")
     if "Debugging and Code Fixing" in questionType:
-        specific_prompts.append("Debug and fix the given code snippet to ensure it works correctly.")
+        specific_prompts.append("Debug and fix the given code snippet to ensure it works correctly. Use debugging tools and techniques like print statements or debugging environments to identify and resolve issues like logical errors or runtime errors.")
     # 每行输出一个 specific prompt
     final_prompt = "\n".join(specific_prompts)
     return final_prompt
+def design_prompt_complex(questionType):
+    specific_prompts = []
+
+    if "Basic Algorithm Problems" in questionType:
+        specific_prompts.append(
+            "Basic Algorithm Problems focus on solving computational challenges using foundational techniques such as sorting, searching, and recursion. "
+            "For example, sorting algorithms like QuickSort and MergeSort offer efficient ways to handle ordered data, while searching techniques like binary search optimize lookups in sorted arrays. "
+            "Dynamic programming methods like memoization and tabulation can be used for problems with overlapping subproblems, such as the Fibonacci sequence. "
+            "Ensure that the solution adheres to constraints, considers edge cases (e.g., empty inputs or large datasets), and optimizes both time and space complexity for scalability."
+        )
+    if "Mathematical Problems" in questionType:
+        specific_prompts.append(
+            "Mathematical Problems require translating abstract numerical or algebraic concepts into computational solutions. "
+            "Tasks may involve operations such as matrix manipulation, number theory, statistical calculations, or optimization problems. "
+            "For instance, implementing numerical methods like Newton-Raphson for root finding, or solving linear equations using Gaussian elimination, requires a careful balance of precision and computational efficiency. "
+            "Explain the mathematical theory behind the solution, demonstrate any assumptions, and ensure the implementation accounts for floating-point errors and edge cases, such as division by zero or invalid inputs."
+        )
+    if "Data Structure Related Problems" in questionType:
+        specific_prompts.append(
+            "Data Structure Related Problems revolve around leveraging specialized data organizations, such as stacks, queues, linked lists, trees, graphs, or hash maps, to meet specific computational requirements. "
+            "Key considerations include trade-offs between insertion, deletion, and search times, as well as memory usage. "
+            "For instance, using a heap for priority queues optimizes access to the smallest or largest element, while a trie efficiently handles prefix-based queries. "
+            "Design the solution by first analyzing the problem's constraints and expected operations, then selecting a data structure that minimizes computational overhead and maximizes clarity."
+        )
+    if "String Operations" in questionType:
+        specific_prompts.append(
+            "String Operations involve manipulating textual data through tasks like pattern matching, substring extraction, or text formatting. "
+            "Efficient solutions often employ techniques such as the KMP (Knuth-Morris-Pratt) algorithm for pattern matching, character frequency tables for anagram detection, or sliding window approaches for substring problems. "
+            "Incorporate robust error handling to manage edge cases like empty strings, special characters, or language-specific encodings (e.g., UTF-8). Clearly document how the approach scales with input length and ensure that regex or other tools are used only when appropriate for simplicity and performance."
+        )
+    if "Logical Reasoning and Conditional Statements" in questionType:
+        specific_prompts.append(
+            "Logical Reasoning and Conditional Statements require decomposing complex conditions into executable logic, often involving constructs such as if-else, switch statements, or boolean expressions. "
+            "For example, consider a nested conditional logic problem requiring evaluation of multiple rules, where clear and well-commented decision trees or boolean algebra simplifications can aid in reducing complexity. "
+            "Explain the reasoning behind each logical step, validate edge cases (e.g., boundary values in ranges), and ensure code readability through concise comments and modular structure."
+        )
+    if "Complexity Analysis" in questionType:
+        specific_prompts.append(
+            "Complexity Analysis is crucial for evaluating the efficiency of a solution. It involves analyzing both time complexity (e.g., O(n), O(log n)) and space complexity based on the algorithm's design. "
+            "Explain the computational costs for each critical step of the implementation, identifying potential bottlenecks or areas for optimization. "
+            "Use examples to compare theoretical predictions with empirical results, such as analyzing runtime for inputs of varying sizes, and discuss whether improvements like parallelism, caching, or data structure adjustments could further optimize performance."
+        )
+    if "Specific Function Implementations" in questionType:
+        specific_prompts.append(
+            "Specific Function Implementations require constructing modular and reusable code for well-defined tasks. "
+            "For example, a function to calculate the median of a dataset should handle both odd and even input sizes and ensure correctness through sorting or heap-based techniques. "
+            "Prioritize parameter validation, include docstrings describing the function's inputs, outputs, and edge cases, and implement robust error handling to prevent unexpected failures (e.g., handling None or invalid input types)."
+        )
+    if "Debugging and Code Fixing" in questionType:
+        specific_prompts.append(
+            "Debugging and Code Fixing entail identifying and resolving errors in existing code. Common techniques include using print statements or logging for traceability, employing debuggers for stepwise execution, and writing targeted unit tests to isolate faulty behavior. "
+            "Explain how each identified bug affects program logic and provide a clear rationale for the fix. Additionally, ensure the corrected code adheres to best practices, such as proper variable naming, code comments, and compliance with style guides (e.g., PEP 8 in Python)."
+        )
+
+    # Create the final prompt with each specific description on a new line for clarity
+    final_prompt = "\n\n".join(specific_prompts)
+    return final_prompt
+
 
 def code_generation(prompt, questionType, retries=5, delay=1):
     global api_key_index
@@ -135,7 +193,7 @@ def code_generation(prompt, questionType, retries=5, delay=1):
             completion = client.chat.completions.create(
                 model="Meta-Llama-3.1-8B-Instruct",
                 messages=[
-                    {"role": "system", "content": {final_prompt}},
+                    {"role": "system", "content": f"\n{final_prompt}\n"},
                     {"role": "user", "content": f"\n{prompt}\n"}
                 ],
                 stream=True,

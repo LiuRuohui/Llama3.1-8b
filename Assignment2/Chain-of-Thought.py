@@ -45,7 +45,9 @@ def CoT_generation(prompt, cot_enabled=False, scot_enabled=False, retries=100, d
             "4: return None\n```\n"
         )
         SCoT_prompt = (
-            "Please understand the requirement and write a rough solving process.\n It starts with a input - output structure.\n You should use three basic structures to build the solving process, including sequences, branches, and loops.\n"
+            "Please understand the requirement and write a rough solving process.\n"
+            "It starts with a input - output structure.\n"
+            "You should use three basic structures to build the solving process, including sequences, branches, and loops.\n"
             "The necessary details should be written in natural languages.\n\n"
         )
         #prompt = f"\n{prompt}\n Please understand the requirement and write a rough solving process.\n You should use three basic structures to build the solving process, including sequences, branches, and loops.\n The necessary details should be written in natural languages.\n Do not change the function name given.\n"
@@ -166,6 +168,7 @@ def extract_first_function(prompt):
     return None
 
 if __name__ == '__main__':
+    """
     problems = read_problems()
     prompts = []
     task_ids = []
@@ -218,29 +221,47 @@ if __name__ == '__main__':
     print(f"\n Total Number of Generated Tokens: {total_tokens:.2f}")
     print(f"\n Average Number of Generated Tokens per Problem: {average_tokens:.2f}")
 
-    #write_jsonl("cot.jsonl", generated_solutions)
-    #write_jsonl("scot_zeroshot.jsonl", generated_solutions)
-    write_jsonl("scot_fewshot.jsonl", generated_solutions)
-    #result = entry_point("cot.jsonl", k="1", n_workers=4, timeout=5.0)
-    #result = entry_point("scot_zeroshot.jsonl", k="1", n_workers=4, timeout=5.0)
-    result = entry_point("scot_fewshot.jsonl", k="1", n_workers=4, timeout=5.0)
+    #write_jsonl("cot_baseline.jsonl", generated_solutions)
+    #write_jsonl("scot_baseline_zeroshot.jsonl", generated_solutions)
+    write_jsonl("scot_baseline_fewshot.jsonl", generated_solutions)
+    #result = entry_point("cot_baseline.jsonl", k="1", n_workers=4, timeout=5.0)
+    #result = entry_point("scot_baseline_zeroshot.jsonl", k="1", n_workers=4, timeout=5.0)
+    result = entry_point("scot_baseline_fewshot.jsonl", k="1", n_workers=4, timeout=5.0)
+    """
     # Compare
     passed_task_ids_cot = []
     passed_task_ids_scot = []
     passed_task_ids_scot_few = []
-    results_cot = read_problems("cot.jsonl_results.jsonl")
-    results_scot = read_problems("scot_zeroshot.jsonl_results.jsonl")
-    results_scot_few = read_problems("scot_fewshot.jsonl_results.jsonl")
+    results_cot = read_problems("cot_baseline.jsonl_results.jsonl")
+    results_scot = read_problems("scot_baseline_zeroshot.jsonl_results.jsonl")
+    results_scot_few = read_problems("scot_baseline_fewshot.jsonl_results.jsonl")
     for r in results_cot:
         if results_cot[r]["result"] == "passed":
             passed_task_ids_cot.append(results_cot[r]["task_id"])
-    print(passed_task_ids_cot)
+    #print(passed_task_ids_cot)
     for r in results_scot:
         if results_scot[r]["result"] == "passed":
             passed_task_ids_scot.append(results_scot[r]["task_id"])
-    print(passed_task_ids_scot)
+    #print(passed_task_ids_scot)
     for r in results_scot_few:
         if results_scot_few[r]["result"] == "passed":
             passed_task_ids_scot_few.append(results_scot_few[r]["task_id"])
-    print(passed_task_ids_scot_few)
+    #print(passed_task_ids_scot_few)
+
+    # 找出在results_cot但不在results_scot和results_scot_few中的task_id
+    only_in_cot = set(passed_task_ids_cot) - set(passed_task_ids_scot) - set(passed_task_ids_scot_few)
+
+    # 找出在results_scot但不在results_cot和results_scot_few中的task_id
+    only_in_scot = set(passed_task_ids_scot) - set(passed_task_ids_cot) - set(passed_task_ids_scot_few)
+
+    # 找出在results_scot_few但不在results_cot和results_scot中的task_id
+    only_in_scot_few = set(passed_task_ids_scot_few) - set(passed_task_ids_cot) - set(passed_task_ids_scot)
+
+    # 找出三个列表中的共同task_id
+    common_task_ids = set(passed_task_ids_cot) & set(passed_task_ids_scot) & set(passed_task_ids_scot_few)
+
+    print("在results_cot但不在results_scot和results_scot_few中的task_id：", only_in_cot)
+    print("在results_scot但不在results_cot和results_scot_few中的task_id：", only_in_scot)
+    print("在results_scot_few但不在results_cot和results_scot中的task_id：", only_in_scot_few)
+    print("在三个结果中都存在的task_id：", common_task_ids)
 
