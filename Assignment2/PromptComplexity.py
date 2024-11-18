@@ -1,6 +1,5 @@
 import time
-import os
-from baseline import HUMAN_EVAL, read_problems, stream_jsonl, write_jsonl
+from baseline import read_problems, write_jsonl
 from evaluate_functional_correctness import entry_point
 from openai import OpenAI
 import openai
@@ -9,16 +8,40 @@ import openai
 API_KEYS = [
     "bab5a926-5245-4843-a03d-d98b57a0c644",
     "31a55a95-3f5c-483b-9a35-5fa473a6006a",
-    "1fe618ed-bb32-408e-a481-57f9c477692f",
-    "60c63e5e-0082-4fa6-a642-f8d678f61ddc",
-    "f1d22e5a-d33e-4d1a-a3f9-c99e22749b0b"
+    "216ca667-90ec-490b-978a-476ab39bcb79",
+    "6c1efdc4-fcb7-45b8-962b-aec70649b27f",
+    "1a6214e2-084a-4987-bb4e-48f770b8e068",
 ]
 api_key_index = 0
 
-# 初始化 OpenAI 客户端
 client = OpenAI(base_url="https://api.sambanova.ai/v1", api_key=API_KEYS[api_key_index])
 
-def code_generation(prompt, retries=100, delay=5):
+
+# category list
+categories = [
+    "Basic Algorithm Problems",
+    "Mathematical Problems",
+    "Data Structure Related Problems",
+    "String Operations",
+    "Logical Reasoning and Conditional Statements",
+    "Complexity Analysis",
+    "Specific Function Implementations",
+    "Debugging and Code Fixing"
+]
+
+def clean_the_wrap(code):
+    # Remove ``` markers and the word 'python'
+    start_index = code.find('```')
+    if start_index!= -1:
+        end_index = code.find('```', start_index + 3)
+        if end_index!= -1:
+            code = code[start_index + 3:end_index].replace("python", "")
+    return code.strip()
+
+# Initialize categorized results
+categorized_results = {category: [] for category in categories}
+
+def questionType_generation(prompt, retries=5, delay=1):
     global api_key_index
 
     for attempt in range(retries):
@@ -26,8 +49,8 @@ def code_generation(prompt, retries=100, delay=5):
             completion = client.chat.completions.create(
                 model="Meta-Llama-3.1-8B-Instruct",
                 messages=[
-                    {"role": "system", "content": "Environment: ipython"},
-                    {"role": "user", "content": prompt}
+                    {"role": "system", "content": "give me the type of the problem based on your knowledge. Remember, you could only select one from the below list:\n Basic Algorithm Problems, Mathematical Problems, Data Structure Related Problems, String Operations, Logical Reasoning and Conditional Statements, Complexity Analysis, Specific Function Implementations, Debugging and Code Fixing.\n If you can't specify it, you can select two or three of them from the list."},
+                    {"role": "user", "content": f"You only need to output the type of the question above the list without any other statements\n{prompt}"}
                 ],
                 stream=True,
                 stream_options={"include_usage": True}
@@ -43,37 +66,112 @@ def code_generation(prompt, retries=100, delay=5):
                 if chunk.usage:
                     tokens += chunk.usage.completion_tokens
 
-            return full_response, tokens, f"System:Environment: ipython\n User:{prompt}"  # return full response and tokens and the prompt given
+            return full_response, tokens, f"give me the type of the problem based on your knowledge. Remember, you could only select one from the below list:\n Basic Algorithm Problems, Mathematical Problems, Data Structure Related Problems, String Operations, Logical Reasoning and Conditional Statements, Complexity Analysis, Specific Function Implementations, Debugging and Code Fixing.\n If you can't specify it, you can select two or three of them from the list.\n User:{prompt}"  # Return full response and tokens
 
         except openai.RateLimitError:
-            print(f"Request rate limit exceeded, switching API key...")
-            api_key_index = (api_key_index + 1) % len(API_KEYS)  # change the API
-            client.api_key = API_KEYS[api_key_index]  # update the API
-            time.sleep(delay)  # wait
+            print("Rate limit exceeded, switching API key...")
+            api_key_index = (api_key_index + 1) % len(API_KEYS)
+            client.api_key = API_KEYS[api_key_index]
+            time.sleep(delay)
         except Exception as e:
-            print(f"Error occurred while generating code, retrying after {delay} seconds...")
+            print(f"Error: {e}. Retrying...")
             time.sleep(delay)
 
     return None, 0
 
-def clean_the_wrap(code):
-    # Remove ``` markers and the word 'python'
-    cleaned_code = code.strip("```").replace("```", "").replace("python", "").strip()
-    return cleaned_code
+def design_prompt_simple(questionType):
+    specific_prompts = []
+    if "Basic Algorithm Problems" in questionType:
+        specific_prompts.append("This is a basic algorithm problem")
+    if "Mathematical Problems" in questionType:
+        specific_prompts.append("This is a mathematical problem.")
+    if "Data Structure Related Problems" in questionType:
+        specific_prompts.append("This is a data structure related problem.")
+    if "String Operations" in questionType:
+        specific_prompts.append("This is a string operation related problem.")
+    if "Logical Reasoning and Conditional Statements" in questionType:
+        specific_prompts.append("This is a logical reasoning and conditional statements related problems.")
+    if "Complexity Analysis" in questionType:
+        specific_prompts.append("This is complexity related problem.")
+    if "Specific Function Implementations" in questionType:
+        specific_prompts.append("This is specific function implementation.")
+    if "Debugging and Code Fixing" in questionType:
+        specific_prompts.append("This is debugging and code fixing related problem.")
+    # 每行输出一个 specific prompt
+    final_prompt = "\n".join(specific_prompts)
+    return final_prompt
+def design_prompt_medium(questionType):
+    specific_prompts = []
+    if "Basic Algorithm Problems" in questionType:
+        specific_prompts.append("Solve this problem using basic algorithms. Ensure the code is efficient and easy to understand.")
+    if "Mathematical Problems" in questionType:
+        specific_prompts.append("Provide a detailed mathematical solution to the following problem.")
+    if "Data Structure Related Problems" in questionType:
+        specific_prompts.append("Design an efficient solution using appropriate data structures.")
+    if "String Operations" in questionType:
+        specific_prompts.append("Solve this string manipulation task with clarity and correctness.")
+    if "Logical Reasoning and Conditional Statements" in questionType:
+        specific_prompts.append("Apply logical reasoning to address the following problem.")
+    if "Complexity Analysis" in questionType:
+        specific_prompts.append("Analyze the time and space complexity of the solution after implementing the code.")
+    if "Specific Function Implementations" in questionType:
+        specific_prompts.append("Implement the specific function described in the prompt with proper error handling.")
+    if "Debugging and Code Fixing" in questionType:
+        specific_prompts.append("Debug and fix the given code snippet to ensure it works correctly.")
+    # 每行输出一个 specific prompt
+    final_prompt = "\n".join(specific_prompts)
+    return final_prompt
+
+def code_generation(prompt, questionType, retries=5, delay=1):
+    global api_key_index
+
+    #final_prompt = design_prompt_simple(questionType)
+    final_prompt = design_prompt_medium(questionType)
+    #final_prompt = design_prompt_complex(questionType)
+    #print("This is final prompt\n", final_prompt)
+
+    for attempt in range(retries):
+        try:
+            completion = client.chat.completions.create(
+                model="Meta-Llama-3.1-8B-Instruct",
+                messages=[
+                    {"role": "system", "content": {final_prompt}},
+                    {"role": "user", "content": f"\n{prompt}\n"}
+                ],
+                stream=True,
+                stream_options={"include_usage": True}
+            )
+
+            full_response = ""
+            tokens = 0
+            for chunk in completion:
+                if chunk.choices:
+                    delta = chunk.choices[0].delta
+                    if hasattr(delta, 'content'):
+                        full_response += delta.content
+                if chunk.usage:
+                    tokens += chunk.usage.completion_tokens
+
+            return full_response, tokens, f"System:Generate the code based on specific question type .\n User:\n{final_prompt}\n{prompt}\n"  # Return full response and tokens
+
+        except openai.RateLimitError:
+            print("Rate limit exceeded, switching API key...")
+            api_key_index = (api_key_index + 1) % len(API_KEYS)
+            client.api_key = API_KEYS[api_key_index]
+            time.sleep(delay)
+        except Exception as e:
+            print(f"Error: {e}. Retrying...")
+            time.sleep(delay)
+
+    return None, 0
+
 
 if __name__ == '__main__':
     problems = read_problems()
-    questionType = read_problems("questionType.baseline.jsonl")
-    question_type = []
-    prompts = []
+    questionTypes = []
     task_ids = []
+    prompts = []
     generated_solutions = []
-    total_time = 0  # Initial Total Time
-    total_tokens = 0  # Initial Total Token
-
-    for q in questionType:
-        type = questionType[q]["output"]
-        question_type.append(type)
 
     for p in problems:
         task_id = problems[p]["task_id"]
@@ -81,30 +179,36 @@ if __name__ == '__main__':
         prompts.append(prompt)
         task_ids.append(task_id)
 
+    total_time = 0
+    total_tokens = 0
+
     for i in range(len(task_ids)):
         task_id = task_ids[i]
         prompt = prompts[i]
-        qType = question_type[i]
 
         start_time = time.time()
-        completion, token_count, prompt_given = code_generation(qType, prompt)  # get response and token
+        Type_completion, token_count1, prompt_given = questionType_generation(prompt)
+        #print("\n\n", task_id, "\n", Type_completion)
+        total_tokens += token_count1
+        completion, token_count2, prompt_given = code_generation(prompt, Type_completion)
+        #print("code\n", clean_the_wrap(completion))
         elapsed_time = time.time() - start_time
 
-        total_time += elapsed_time  # accumulate time
-        total_tokens += token_count  # accumulate token
+        total_time += elapsed_time
+        total_tokens += token_count2
 
         if completion:
             generated_solutions.append({
                 "task_id": task_id,
-                "input": prompt,
-                "prompt": prompt_given,
-                "output": completion,
-                "elapsed_time": total_time,
-                "token_count": total_tokens
+                "prompt": prompt,
+                "output": clean_the_wrap(completion),
+                "elapsed_time": elapsed_time,
+                "total_token": token_count1 + token_count2
             })
-            print(f"Task ID: {task_id}, Time: {elapsed_time:.2f}s, Tokens: {token_count}")
 
-    # average time and token
+            print(f"Task ID: {task_id}, Time: {elapsed_time:.2f}s, Tokens: {token_count1 + token_count2}")
+
+
     average_time = total_time / len(prompts) if prompts else 0
     average_tokens = total_tokens / len(prompts) if prompts else 0
 
@@ -113,5 +217,13 @@ if __name__ == '__main__':
     print(f"\n Total Number of Generated Tokens: {total_tokens:.2f}")
     print(f"\n Average Number of Generated Tokens per Problem: {average_tokens:.2f}")
 
-    write_jsonl("zeroshot.baseline.jsonl", generated_solutions)
-    result = entry_point("zeroshot.baseline.jsonl", k="1", n_workers=4, timeout=3.0)
+    # Save results
+    # simple prompt
+    #write_jsonl("prompt_complexity_simple.jsonl", generated_solutions)
+    #entry_point("prompt_complexity_simple.jsonl", k="1", n_workers=4, timeout=5.0)
+    # medium prompt
+    write_jsonl("prompt_complexity_medium.jsonl", generated_solutions)
+    entry_point("prompt_complexity_medium.jsonl", k="1", n_workers=4, timeout=5.0)
+    # complex prompt
+    #write_jsonl("prompt_complexity_complex.jsonl", generated_solutions)
+    #entry_point("prompt_complexity_complex.jsonl", k="1", n_workers=4, timeout=5.0)

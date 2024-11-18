@@ -187,16 +187,16 @@ if __name__ == '__main__':
         #CoT baseline
         #completion, token_count, prompt_given = CoT_generation(prompt, cot_enabled=True)
         #SCoT Improvement
-        completion, token_count, prompt_given = CoT_generation(prompt, scot_enabled=True)
-        total_tokens += token_count
+        completion, token_count1, prompt_given = CoT_generation(prompt, scot_enabled=True)
+        total_tokens += token_count1
         #print("model output for SCoT\n",completion)
-        completion, token_count, prompt_given = code_generation(completion, prompt)
+        completion, token_count2, prompt_given = code_generation(completion, prompt)
         #print("model output for code\n",completion)
         elapsed_time = time.time() - start_time
         #print("clean the wrap of the model output \n", clean_the_wrap(completion))
 
         total_time += elapsed_time  # accumulate time
-        total_tokens += token_count  # accumulate token
+        total_tokens += token_count2  # accumulate token
 
         if completion:
             generated_solutions.append({
@@ -205,9 +205,9 @@ if __name__ == '__main__':
                 "prompt": prompt_given,
                 "output": clean_the_wrap(completion),
                 "elapsed_time": elapsed_time,
-                "token_count": total_tokens
+                "token_count": token_count1+token_count2
             })
-            print(f"Task ID: {task_id}, Time: {elapsed_time:.2f}s, Tokens: {token_count}")
+            print(f"Task ID: {task_id}, Time: {elapsed_time:.2f}s, Tokens: {token_count1+token_count2}")
 
     # average time and token
     average_time = total_time / len(prompts) if prompts else 0
@@ -218,19 +218,19 @@ if __name__ == '__main__':
     print(f"\n Total Number of Generated Tokens: {total_tokens:.2f}")
     print(f"\n Average Number of Generated Tokens per Problem: {average_tokens:.2f}")
 
-    #write_jsonl("cot_baseline.jsonl", generated_solutions)
-    #write_jsonl("scot_baseline_zeroshot.jsonl", generated_solutions)
-    write_jsonl("scot_baseline_fewshot.jsonl", generated_solutions)
-    #result = entry_point("cot_baseline.jsonl", k="1", n_workers=4, timeout=5.0)
-    #result = entry_point("scot_baseline_zeroshot.jsonl", k="1", n_workers=4, timeout=5.0)
-    result = entry_point("scot_baseline_fewshot.jsonl", k="1", n_workers=4, timeout=5.0)
+    #write_jsonl("cot.jsonl", generated_solutions)
+    #write_jsonl("scot_zeroshot.jsonl", generated_solutions)
+    write_jsonl("scot_fewshot.jsonl", generated_solutions)
+    #result = entry_point("cot.jsonl", k="1", n_workers=4, timeout=5.0)
+    #result = entry_point("scot_zeroshot.jsonl", k="1", n_workers=4, timeout=5.0)
+    result = entry_point("scot_fewshot.jsonl", k="1", n_workers=4, timeout=5.0)
     # Compare
     passed_task_ids_cot = []
     passed_task_ids_scot = []
     passed_task_ids_scot_few = []
-    results_cot = read_problems("cot_baseline.jsonl_results.jsonl")
-    results_scot = read_problems("scot_baseline_zeroshot.jsonl_results.jsonl")
-    results_scot_few = read_problems("scot_baseline_fewshot.jsonl_results.jsonl")
+    results_cot = read_problems("cot.jsonl_results.jsonl")
+    results_scot = read_problems("scot_zeroshot.jsonl_results.jsonl")
+    results_scot_few = read_problems("scot_fewshot.jsonl_results.jsonl")
     for r in results_cot:
         if results_cot[r]["result"] == "passed":
             passed_task_ids_cot.append(results_cot[r]["task_id"])

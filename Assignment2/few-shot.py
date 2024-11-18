@@ -36,6 +36,25 @@ FEW_SHOT_EXAMPLES = [
             "    return s[::-1]\n"
         )
     },
+    {
+        "input": (
+            "Write a function that takes a list of integers and returns a list of all "
+            "pairs of integers whose sum is a prime number."
+        ),
+        "output": (
+            "from itertools import combinations\n"
+            "def is_prime(num):\n"
+            "    if num < 2:\n"
+            "        return False\n"
+            "    for i in range(2, int(num ** 0.5) + 1):\n"
+            "        if num % i == 0:\n"
+            "            return False\n"
+            "    return True\n\n"
+            "def prime_sum_pairs(numbers):\n"
+            "    \"\"\"Return all pairs of numbers from the list whose sum is prime.\"\"\"\n"
+            "    return [pair for pair in combinations(numbers, 2) if is_prime(sum(pair))]\n"
+        )
+    }
 ]
 
 def construct_few_shot_prompt(prompt):
