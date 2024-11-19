@@ -36,8 +36,35 @@ FEW_SHOT_EXAMPLES = [
             "    return s[::-1]\n"
         )
     },
+    {
+        "input": (
+            "Write a function that takes a list of integers and returns a list of all "
+            "pairs of integers whose sum is a prime number."
+        ),
+        "output": (
+            "from itertools import combinations\n"
+            "def is_prime(num):\n"
+            "    if num < 2:\n"
+            "        return False\n"
+            "    for i in range(2, int(num ** 0.5) + 1):\n"
+            "        if num % i == 0:\n"
+            "            return False\n"
+            "    return True\n\n"
+            "def prime_sum_pairs(numbers):\n"
+            "    Return all pairs of numbers from the list whose sum is prime.\n"
+            "    return [pair for pair in combinations(numbers, 2) if is_prime(sum(pair))]\n"
+        )
+    }
 ]
 
+def clean_the_wrap(code):
+    # Remove ``` markers and the word 'python'
+    start_index = code.find('```')
+    if start_index!= -1:
+        end_index = code.find('```', start_index + 3)
+        if end_index!= -1:
+            code = code[start_index + 3:end_index].replace("python", "")
+    return code.strip()
 def question_prompt(s):
     return f'Question: {s}'
 
@@ -49,15 +76,7 @@ def construct_few_shot_chats(n):
         chats.append({"role": "assistant", "content": example["output"]})
     return chats
 
-def clean_the_wrap(code):
-    # Remove ``` markers and the word 'python'
-    start_index = code.find('```')
-    if start_index!= -1:
-        end_index = code.find('```', start_index + 3)
-        if end_index!= -1:
-            code = code[start_index + 3:end_index].replace("python", "")
-    return code.strip()
-def code_generation_fewshot(prompt, n=2, retries=100, delay=1):
+def code_generation_fewshot(prompt, n=3, retries=100, delay=1):
     """Generate code using few - shot prompting with updated template."""
     global api_key_index
 
@@ -117,7 +136,7 @@ if __name__ == '__main__':
 
         start_time = time.time()
         completion, token_count, chats = code_generation_fewshot(prompt)  # use few - shot prompting
-        #print("\n\n", clean_the_wrap(completion))
+        #print("\n\n", completion)
         elapsed_time = time.time() - start_time
 
         total_time += elapsed_time
