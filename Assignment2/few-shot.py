@@ -24,7 +24,7 @@ FEW_SHOT_EXAMPLES = [
         "input": "Write a function to add two numbers.",
         "output": (
             "def add_two_numbers(a, b):\n"
-            "    \"\"\"Return the sum of two numbers.\"\"\"\n"
+            "    Return the sum of two numbers.\n"
             "    return a + b\n"
         )
     },
@@ -32,53 +32,44 @@ FEW_SHOT_EXAMPLES = [
         "input": "Write a function to reverse a string.",
         "output": (
             "def reverse_string(s):\n"
-            "    \"\"\"Return the reverse of the input string.\"\"\"\n"
+            "    Return the reverse of the input string.\n"
             "    return s[::-1]\n"
         )
     },
-    {
-        "input": (
-            "Write a function that takes a list of integers and returns a list of all "
-            "pairs of integers whose sum is a prime number."
-        ),
-        "output": (
-            "from itertools import combinations\n"
-            "def is_prime(num):\n"
-            "    if num < 2:\n"
-            "        return False\n"
-            "    for i in range(2, int(num ** 0.5) + 1):\n"
-            "        if num % i == 0:\n"
-            "            return False\n"
-            "    return True\n\n"
-            "def prime_sum_pairs(numbers):\n"
-            "    \"\"\"Return all pairs of numbers from the list whose sum is prime.\"\"\"\n"
-            "    return [pair for pair in combinations(numbers, 2) if is_prime(sum(pair))]\n"
-        )
-    }
 ]
 
-def construct_few_shot_prompt(prompt):
-    """Construct a prompt with few-shot examples."""
-    few_shot_prompt = "Here are some examples, you need to learn from it:\n\n"
-    for example in FEW_SHOT_EXAMPLES:
-        few_shot_prompt += f"Input:\n{example['input']}\nOutput:\n{example['output']}\n\n"
-    few_shot_prompt += f"Now solve this problem based on the prompt given:\n{prompt}\n"
-    return few_shot_prompt
+def question_prompt(s):
+    return f'Question: {s}'
 
-def code_generation_fewshot(prompt, retries=100, delay=1):
-    """Generate code using few-shot prompting."""
+def construct_few_shot_chats(n):
+    """Construct few - shot chats based on the FEW_SHOT_EXAMPLES."""
+    chats = []
+    for example in FEW_SHOT_EXAMPLES[:n]:
+        chats.append({"role": "user", "content": question_prompt(example["input"])})
+        chats.append({"role": "assistant", "content": example["output"]})
+    return chats
+
+def clean_the_wrap(code):
+    # Remove ``` markers and the word 'python'
+    start_index = code.find('```')
+    if start_index!= -1:
+        end_index = code.find('```', start_index + 3)
+        if end_index!= -1:
+            code = code[start_index + 3:end_index].replace("python", "")
+    return code.strip()
+def code_generation_fewshot(prompt, n=2, retries=100, delay=1):
+    """Generate code using few - shot prompting with updated template."""
     global api_key_index
 
-    few_shot_prompt = construct_few_shot_prompt(prompt)
+    few_shot_chats = construct_few_shot_chats(n)
+    new_chat = [{"role": "user", "content": question_prompt(prompt)}]
+    chats = few_shot_chats + new_chat
 
     for attempt in range(retries):
         try:
             completion = client.chat.completions.create(
                 model="Meta-Llama-3.1-8B-Instruct",
-                messages=[
-                    {"role": "system", "content": "Environment: ipython"},
-                    {"role": "user", "content": few_shot_prompt}
-                ],
+                messages=chats,
                 stream=True,
                 stream_options={"include_usage": True}
             )
@@ -93,7 +84,7 @@ def code_generation_fewshot(prompt, retries=100, delay=1):
                 if chunk.usage:
                     tokens += chunk.usage.completion_tokens
 
-            return full_response, tokens, f"Few-Shot Prompt: {few_shot_prompt}"  # return full response and tokens
+            return full_response, tokens, chats  # return full response, tokens and chats
 
         except openai.RateLimitError:
             print(f"Request rate limit exceeded, switching API key...")
@@ -125,8 +116,8 @@ if __name__ == '__main__':
         prompt = prompts[i]
 
         start_time = time.time()
-        completion, token_count, prompt_given = code_generation_fewshot(prompt)  # use few-shot prompting
-        #print("\n\n\n", completion)
+        completion, token_count, chats = code_generation_fewshot(prompt)  # use few - shot prompting
+        #print("\n\n", clean_the_wrap(completion))
         elapsed_time = time.time() - start_time
 
         total_time += elapsed_time
@@ -136,8 +127,8 @@ if __name__ == '__main__':
             generated_solutions.append({
                 "task_id": task_id,
                 "input": prompt,
-                "prompt": prompt_given,
-                "output": completion,
+                "prompt": chats,
+                "output": clean_the_wrap(completion),
                 "elapsed_time": elapsed_time,
                 "token_count": token_count
             })
@@ -146,8 +137,8 @@ if __name__ == '__main__':
     average_time = total_time / len(prompts) if prompts else 0
     average_tokens = total_tokens / len(prompts) if prompts else 0
 
-    print(f"\n Wall-Clock Time: {total_time:.2f}s")
-    print(f"\n Average Wall-Clock Time per Problem: {average_time:.2f}s")
+    print(f"\n Wall - Clock Time: {total_time:.2f}s")
+    print(f"\n Average Wall - Clock Time per Problem: {average_time:.2f}s")
     print(f"\n Total Number of Generated Tokens: {total_tokens:.2f}")
     print(f"\n Average Number of Generated Tokens per Problem: {average_tokens:.2f}")
 

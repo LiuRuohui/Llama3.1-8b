@@ -41,7 +41,7 @@ def clean_the_wrap(code):
 # Initialize categorized results
 categorized_results = {category: [] for category in categories}
 
-def questionType_generation(prompt, retries=5, delay=1):
+def questionType_generation(prompt, retries=5, delay=5):
     global api_key_index
 
     for attempt in range(retries):
@@ -103,21 +103,21 @@ def design_prompt_simple(questionType):
 def design_prompt_medium(questionType):
     specific_prompts = []
     if "Basic Algorithm Problems" in questionType:
-        specific_prompts.append("Solve this problem using basic algorithms. Consider using well - known sorting or searching algorithms if applicable. Ensure the code is efficient by analyzing its complexity and easy to understand with proper comments.")
+        specific_prompts.append("Solve this problem using basic algorithms. Ensure the code is efficient and easy to understand.")
     if "Mathematical Problems" in questionType:
-        specific_prompts.append("Provide a detailed mathematical solution to the following problem. Explain each step clearly, showing the reasoning behind the mathematical operations and formulas used.")
+        specific_prompts.append("Provide a detailed mathematical solution to the following problem.")
     if "Data Structure Related Problems" in questionType:
-        specific_prompts.append("Design an efficient solution using appropriate data structures. Think about the nature of the data and operations required, and choose data structures like arrays, linked lists, or trees accordingly.")
+        specific_prompts.append("Design an efficient solution using appropriate data structures.")
     if "String Operations" in questionType:
-        specific_prompts.append("Solve this string manipulation task with clarity and correctness. Pay attention to details such as string length, character encoding, and possible edge cases like empty strings.")
+        specific_prompts.append("Solve this string manipulation task with clarity and correctness.")
     if "Logical Reasoning and Conditional Statements" in questionType:
-        specific_prompts.append("Apply logical reasoning to address the following problem. Break down the problem into smaller logical parts and use conditional statements effectively to handle different scenarios.")
+        specific_prompts.append("Apply logical reasoning to address the following problem.")
     if "Complexity Analysis" in questionType:
-        specific_prompts.append("Analyze the time and space complexity of the solution after implementing the code. Use appropriate methods like Big - O notation to accurately represent the complexity and consider how the complexity might change with different input sizes.")
+        specific_prompts.append("Analyze the time and space complexity of the solution after implementing the code.")
     if "Specific Function Implementations" in questionType:
-        specific_prompts.append("Implement the specific function described in the prompt with proper error handling. Anticipate possible errors such as invalid inputs and handle them gracefully to prevent the program from crashing.")
+        specific_prompts.append("Implement the specific function described in the prompt with proper error handling.")
     if "Debugging and Code Fixing" in questionType:
-        specific_prompts.append("Debug and fix the given code snippet to ensure it works correctly. Use debugging tools and techniques like print statements or debugging environments to identify and resolve issues like logical errors or runtime errors.")
+        specific_prompts.append("Debug and fix the given code snippet to ensure it works correctly.")
     # 每行输出一个 specific prompt
     final_prompt = "\n".join(specific_prompts)
     return final_prompt
@@ -180,12 +180,12 @@ def design_prompt_complex(questionType):
     return final_prompt
 
 
-def code_generation(prompt, questionType, retries=5, delay=1):
+def code_generation(prompt, questionType, retries=5, delay=5):
     global api_key_index
 
     #final_prompt = design_prompt_simple(questionType)
-    final_prompt = design_prompt_medium(questionType)
-    #final_prompt = design_prompt_complex(questionType)
+    #final_prompt = design_prompt_medium(questionType)
+    final_prompt = design_prompt_complex(questionType)
     #print("This is final prompt\n", final_prompt)
 
     for attempt in range(retries):
@@ -210,7 +210,7 @@ def code_generation(prompt, questionType, retries=5, delay=1):
                 if chunk.usage:
                     tokens += chunk.usage.completion_tokens
 
-            return full_response, tokens, f"System:Generate the code based on specific question type .\n User:\n{final_prompt}\n{prompt}\n"  # Return full response and tokens
+            return full_response, tokens, f"System:{final_prompt}.\n User:\n{prompt}\n"  # Return full response and tokens
 
         except openai.RateLimitError:
             print("Rate limit exceeded, switching API key...")
@@ -259,6 +259,7 @@ if __name__ == '__main__':
             generated_solutions.append({
                 "task_id": task_id,
                 "prompt": prompt,
+                "input": prompt_given,
                 "output": clean_the_wrap(completion),
                 "elapsed_time": elapsed_time,
                 "total_token": token_count1 + token_count2
@@ -280,8 +281,8 @@ if __name__ == '__main__':
     #write_jsonl("prompt_complexity_simple.jsonl", generated_solutions)
     #entry_point("prompt_complexity_simple.jsonl", k="1", n_workers=4, timeout=5.0)
     # medium prompt
-    write_jsonl("prompt_complexity_medium.jsonl", generated_solutions)
-    entry_point("prompt_complexity_medium.jsonl", k="1", n_workers=4, timeout=5.0)
+    #write_jsonl("prompt_complexity_medium.jsonl", generated_solutions)
+    #entry_point("prompt_complexity_medium.jsonl", k="1", n_workers=4, timeout=5.0)
     # complex prompt
-    #write_jsonl("prompt_complexity_complex.jsonl", generated_solutions)
-    #entry_point("prompt_complexity_complex.jsonl", k="1", n_workers=4, timeout=5.0)
+    write_jsonl("prompt_complexity_complex.jsonl", generated_solutions)
+    entry_point("prompt_complexity_complex.jsonl", k="1", n_workers=4, timeout=5.0)
