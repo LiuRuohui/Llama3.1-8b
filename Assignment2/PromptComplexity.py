@@ -282,7 +282,7 @@ if __name__ == '__main__':
     #entry_point("prompt_complexity_simple.jsonl", k="1", n_workers=4, timeout=5.0)
     # medium prompt
     #write_jsonl("prompt_complexity_medium.jsonl", generated_solutions)
-    #entry_point("prompt_complexity_medium.jsonl", k="1", n_workers=4, timeout=5.0)
+    entry_point("prompt_complexity_medium.jsonl", k="1", n_workers=4, timeout=5.0)
     # complex prompt
-    write_jsonl("prompt_complexity_complex.jsonl", generated_solutions)
-    entry_point("prompt_complexity_complex.jsonl", k="1", n_workers=4, timeout=5.0)
+    #write_jsonl("prompt_complexity_complex.jsonl", generated_solutions)
+    #entry_point("prompt_complexity_complex.jsonl", k="1", n_workers=4, timeout=5.0)
