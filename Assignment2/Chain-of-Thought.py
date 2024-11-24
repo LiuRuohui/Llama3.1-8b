@@ -149,13 +149,287 @@ FEW_SHOT_EXAMPLES = [
     }
 ]
 
+"""
+This prompt used for demonstration wrong
+FEW_SHOT_EXAMPLES_SCOT_MODIFIED = [
+    {
+        "input": (
+            "def first_Repeated_Char(str):\n "
+            "Write a python function to find the first repeated character in a given string.\n \n pass\n "
+            "Please understand the requirement and write a rough solving process."
+            "It starts with a input-output structure. You should use three basic structures to build the solving process, including sequences, branches, and loops."
+            " The necessary details should be written in natural languages."
+        ),
+        "output": (
+            "Input: str: a string\n"
+            "Output: ch: a repeated character in str\n"
+            "1: for each character in str:\n"
+            "2: if ch appears more than once in str:\n"
+            "3:if ch == 'a':\n"
+            "4:return ch\n"
+            "5: return None\n"
+        )
+    },
+    {
+        "input": (
+            "def max_Subarray_Sum(arr):\n "
+            "Write a Python function to find the maximum sum of a contiguous subarray in a given array.\n \n pass\n"
+            "Please understand the requirement and write a rough solving process."
+            "It starts with a input-output structure. You should use three basic structures to build the solving process, including sequences, branches, and loops."
+            " The necessary details should be written in natural languages."
+        ),
+        "output": (
+            "Input: arr: a list of integers\n"
+            "Output: max_sum: the maximum sum of any contiguous subarray in arr\n"
+            "1: Initialize max_sum and current_sum with the first element of arr\n"
+            "2: for each subsequent element in arr:\n"
+            "3:update current_sum as current_sum + arr[0]\n"
+            "4: update max_sum as the larger value between max_sum and current_sum\n"
+            "5: return max_sum\n"
+        )
+    },
+    {
+        "input": (
+            "def word_Frequency(text):\n "
+            "Write a Python function to count the frequency of each word in a given string.\n \n pass\n"
+            "Please understand the requirement and write a rough solving process."
+            "It starts with a input-output structure. You should use three basic structures to build the solving process, including sequences, branches, and loops."
+            " The necessary details should be written in natural languages."
+        ),
+        "output": (
+            "Input: text: a string containing words separated by spaces\n"
+            "Output: freq_dict: a dictionary where keys are words and values are their counts\n"
+            "1: Split the text into words based on spaces\n"
+            "2: Initialize an empty dictionary freq_dict\n"
+            "3: for each word in the list of words:\n"
+            "4:if len(word) > 5:\n"
+            "5:freq_dict[word] = 1\n"
+            "6: return freq_dict\n"
+        )
+    }
+    ]
+
+FEW_SHOT_EXAMPLES_MODIFIED = [
+    {
+        "input": (
+            "def first_Repeated_Char(str):\n    "
+            "```Write a python function to find the first repeated character in a given string.\n"
+            "Input: str: a string\n"
+            "Output: ch: a repeated character in str\n"
+            "1: for each character in str:\n"
+            "2: if ch appears more than once in str:\n"
+            "3:if ch == 'a':\n"
+            "4:return ch\n"
+            "5: return None\n"
+            "#Please check the above solving process and write a code base on it. Note that the solving process may contain errors.\n"
+            ),
+        "output": (
+            "def first_Repeated_Char(str):\n"
+            "    h = {}\n"
+            "    for ch in str:\n"
+            "        if ch in h:\n"
+            "            return ch;\n"
+            "        else:\n"
+            "            h[ch] = 1\n"
+            "    return None\n"
+        )
+    },
+    {
+    "input": (
+        "def max_Subarray_Sum(arr):\n    "
+        "```Write a Python function to find the maximum sum of a contiguous subarray in a given array.\n"
+            "Input: arr: a list of integers\n"
+            "Output: max_sum: the maximum sum of any contiguous subarray in arr\n"
+            "1: Initialize max_sum and current_sum with the first element of arr\n"
+            "2: for each subsequent element in arr:\n"
+            "3:update current_sum as current_sum + arr[0]\n"
+            "4: update max_sum as the larger value between max_sum and current_sum\n"
+            "5: return max_sum\n"
+        "#Please check the above solving process and write a code base on it. Note that the solving process may contain errors.\n"
+    ),
+    "output": (
+        "def max_Subarray_Sum(arr):\n"
+        "    max_sum = arr[0]\n"
+        "    current_sum = arr[0]\n"
+        "    for num in arr[1:]:\n"
+        "        current_sum = num - current_sum\n"
+        "        max_sum = max(max_sum, current_sum)\n"
+        "    return max_sum\n"
+    )
+    },
+    {
+    "input": (
+        "def word_Frequency(text):\n    "
+        "```Write a Python function to count the frequency of each word in a given string.\n"
+            "Input: text: a string containing words separated by spaces\n"
+            "Output: freq_dict: a dictionary where keys are words and values are their counts\n"
+            "1: Split the text into words based on spaces\n"
+            "2: Initialize an empty dictionary freq_dict\n"
+            "3: for each word in the list of words:\n"
+            "4:if len(word) > 5:\n"
+            "5:freq_dict[word] = 1\n"
+            "6: return freq_dict\n"
+        "#Please check the above solving process and write a code base on it. Note that the solving process may contain errors.\n"
+    ),
+    "output": (
+        "def word_Frequency(text):\n"
+        "    freq_dict = {}\n"
+        "    words = text.split()\n"
+        "    for word in words:\n"
+        "        if word not in freq_dict:\n"
+        "            freq_dict[word] += 1\n"
+        "        else:\n"
+        "            freq_dict[word] = 1\n"
+        "    return freq_dict\n"
+    )
+    }
+]
+"""
+
+"""
+This prompt used for demonstration irrelevant
+FEW_SHOT_EXAMPLES_SCOT_MODIFIED = [
+    {
+        "input": (
+            "def first_Repeated_Char(str):\n "
+            "Write a python function to find the first repeated character in a given string.\n \n pass\n "
+            "Please understand the requirement and write a rough solving process."
+            "It starts with a input-output structure. You should use three basic structures to build the solving process, including sequences, branches, and loops."
+            " The necessary details should be written in natural languages."
+        ),
+        "output": (
+            "Input: str: a string\n"
+            "Output: ch: a repeated character in str\n"
+            "1: for each character in str:\n"
+            "2: if ch appears more than once in str:\n"
+            "3:if ch == 'a':\n"
+            "4:return ch\n"
+            "5: return None\n"
+        )
+    },
+    {
+        "input": (
+            "def max_Subarray_Sum(arr):\n "
+            "Write a Python function to find the maximum sum of a contiguous subarray in a given array.\n \n pass\n"
+            "Please understand the requirement and write a rough solving process."
+            "It starts with a input-output structure. You should use three basic structures to build the solving process, including sequences, branches, and loops."
+            " The necessary details should be written in natural languages."
+        ),
+        "output": (
+            "Input: arr: a list of integers\n"
+            "Output: max_sum: the maximum sum of any contiguous subarray in arr\n"
+            "1: Initialize max_sum and current_sum with the first element of arr\n"
+            "2: for each subsequent element in arr:\n"
+            "3:update current_sum as current_sum + arr[0]\n"
+            "4: update max_sum as the larger value between max_sum and current_sum\n"
+            "5: return max_sum\n"
+        )
+    },
+    {
+        "input": (
+            "def word_Frequency(text):\n "
+            "Write a Python function to count the frequency of each word in a given string.\n \n pass\n"
+            "Please understand the requirement and write a rough solving process."
+            "It starts with a input-output structure. You should use three basic structures to build the solving process, including sequences, branches, and loops."
+            " The necessary details should be written in natural languages."
+        ),
+        "output": (
+            "Input: text: a string containing words separated by spaces\n"
+            "Output: freq_dict: a dictionary where keys are words and values are their counts\n"
+            "1: Split the text into words based on spaces\n"
+            "2: Initialize an empty dictionary freq_dict\n"
+            "3: for each word in the list of words:\n"
+            "4:if len(word) > 5:\n"
+            "5:freq_dict[word] = 1\n"
+            "6: return freq_dict\n"
+        )
+    }
+    ]
+
+FEW_SHOT_EXAMPLES_MODIFIED = [
+    {
+        "input": (
+            "def first_Repeated_Char(str):\n    "
+            "```Write a python function to find the first repeated character in a given string.\n"
+            "Input: str: a string\n"
+            "Output: ch: a repeated character in str\n"
+            "1: for each character in str:\n"
+            "2: if ch appears more than once in str:\n"
+            "3:if ch == 'a':\n"
+            "4:return ch\n"
+            "5: return None\n"
+            "#Please check the above solving process and write a code base on it. Note that the solving process may contain errors.\n"
+            ),
+        "output": (
+            "def first_Repeated_Char(str):\n"
+            "    h = {}\n"
+            "    for ch in str:\n"
+            "        if ch in h:\n"
+            "            return ch;\n"
+            "        else:\n"
+            "            h[ch] = 1\n"
+            "    return None\n"
+        )
+    },
+    {
+    "input": (
+        "def max_Subarray_Sum(arr):\n    "
+        "```Write a Python function to find the maximum sum of a contiguous subarray in a given array.\n"
+            "Input: arr: a list of integers\n"
+            "Output: max_sum: the maximum sum of any contiguous subarray in arr\n"
+            "1: Initialize max_sum and current_sum with the first element of arr\n"
+            "2: for each subsequent element in arr:\n"
+            "3:update current_sum as current_sum + arr[0]\n"
+            "4: update max_sum as the larger value between max_sum and current_sum\n"
+            "5: return max_sum\n"
+        "#Please check the above solving process and write a code base on it. Note that the solving process may contain errors.\n"
+    ),
+    "output": (
+        "def max_Subarray_Sum(arr):\n"
+        "    max_sum = arr[0]\n"
+        "    current_sum = arr[0]\n"
+        "    for num in arr[1:]:\n"
+        "        current_sum = num - current_sum\n"
+        "        max_sum = max(max_sum, current_sum)\n"
+        "    return max_sum\n"
+    )
+    },
+    {
+    "input": (
+        "def word_Frequency(text):\n    "
+        "```Write a Python function to count the frequency of each word in a given string.\n"
+            "Input: text: a string containing words separated by spaces\n"
+            "Output: freq_dict: a dictionary where keys are words and values are their counts\n"
+            "1: Split the text into words based on spaces\n"
+            "2: Initialize an empty dictionary freq_dict\n"
+            "3: for each word in the list of words:\n"
+            "4:if len(word) > 5:\n"
+            "5:freq_dict[word] = 1\n"
+            "6: return freq_dict\n"
+        "#Please check the above solving process and write a code base on it. Note that the solving process may contain errors.\n"
+    ),
+    "output": (
+        "def word_Frequency(text):\n"
+        "    freq_dict = {}\n"
+        "    words = text.split()\n"
+        "    for word in words:\n"
+        "        if word not in freq_dict:\n"
+        "            freq_dict[word] += 1\n"
+        "        else:\n"
+        "            freq_dict[word] = 1\n"
+        "    return freq_dict\n"
+    )
+    }
+]
+"""
 def question_prompt(s):
     return f'Question: {s}'
 
 def construct_few_shot_chats_SCOT(n):
     """Construct few - shot chats based on the FEW_SHOT_EXAMPLES."""
     chats = []
-    for example in FEW_SHOT_EXAMPLES_SCOT[:n]:
+    #for example in FEW_SHOT_EXAMPLES_SCOT[:n]:
+    for example in FEW_SHOT_EXAMPLES_SCOT_MODIFIED[:n]:
         chats.append({"role": "user", "content": question_prompt(example["input"])})
         chats.append({"role": "assistant", "content": example["output"]})
     return chats
@@ -163,7 +437,8 @@ def construct_few_shot_chats_SCOT(n):
 def construct_few_shot_chats(n):
     """Construct few - shot chats based on the FEW_SHOT_EXAMPLES."""
     chats = []
-    for example in FEW_SHOT_EXAMPLES[:n]:
+    #for example in FEW_SHOT_EXAMPLES[:n]:
+    for example in FEW_SHOT_EXAMPLES_MODIFIED[:n]:
         chats.append({"role": "user", "content": question_prompt(example["input"])})
         chats.append({"role": "assistant", "content": example["output"]})
     return chats
@@ -291,7 +566,7 @@ def code_generation(CoT, prompt, cot_enabled=False, scot_enabled=False, scot_few
     return None, 0
 
 if __name__ == '__main__':
-    """
+
     problems = read_problems()
     prompts = []
     task_ids = []
@@ -349,11 +624,13 @@ if __name__ == '__main__':
 
     #write_jsonl("cot_baseline.jsonl", generated_solutions)
     #write_jsonl("scot_baseline_zeroshot.jsonl", generated_solutions)
-    write_jsonl("scot_baseline_fewshot.jsonl", generated_solutions)
+    #write_jsonl("scot_baseline_fewshot.jsonl", generated_solutions)
+    write_jsonl("scot_baseline_fewshot_demowrong.jsonl", generated_solutions)
     #result = entry_point("cot_baseline.jsonl", k="1", n_workers=4, timeout=5.0)
     #result = entry_point("scot_baseline_zeroshot.jsonl", k="1", n_workers=4, timeout=5.0)
-    """
-    result = entry_point("scot_baseline_fewshot.jsonl", k="1", n_workers=4, timeout=5.0)
+    #result = entry_point("scot_baseline_fewshot.jsonl", k="1", n_workers=4, timeout=5.0)
+    result = entry_point("scot_baseline_fewshot_demowrong.jsonl", k="1", n_workers=4, timeout=5.0)
+
     """
     # Compare
     passed_task_ids_cot = []
@@ -375,21 +652,20 @@ if __name__ == '__main__':
             passed_task_ids_scot_few.append(results_scot_few[r]["task_id"])
     #print(passed_task_ids_scot_few)
 
-    # 找出在results_cot但不在results_scot和results_scot_few中的task_id
     only_in_cot = set(passed_task_ids_cot) - set(passed_task_ids_scot) - set(passed_task_ids_scot_few)
 
-    # 找出在results_scot但不在results_cot和results_scot_few中的task_id
     only_in_scot = set(passed_task_ids_scot) - set(passed_task_ids_cot) - set(passed_task_ids_scot_few)
 
-    # 找出在results_scot_few但不在results_cot和results_scot中的task_id
     only_in_scot_few = set(passed_task_ids_scot_few) - set(passed_task_ids_cot) - set(passed_task_ids_scot)
 
-    # 找出三个列表中的共同task_id
     common_task_ids = set(passed_task_ids_cot) & set(passed_task_ids_scot) & set(passed_task_ids_scot_few)
 
-    print("在results_cot但不在results_scot和results_scot_few中的task_id：", only_in_cot)
-    print("在results_scot但不在results_cot和results_scot_few中的task_id：", only_in_scot)
-    print("在results_scot_few但不在results_cot和results_scot中的task_id：", only_in_scot_few)
-    print("在三个结果中都存在的task_id：", common_task_ids)
+    print("The task_id that exists in results_cot but not in results_scot and results_scot_few:", only_in_cot)
+    print("The task_id that exists in results_scot but not in results_cot and results_scot_few:", only_in_scot)
+    print("The task_id that exists in results_scot_few but not in results_cot and results_scot:", only_in_scot_few)
+    print("The task_id that exists in all three results:", common_task_ids)
     """
+
+
+
 
