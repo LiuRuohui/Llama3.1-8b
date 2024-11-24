@@ -286,8 +286,7 @@ FEW_SHOT_EXAMPLES_MODIFIED = [
 ]
 """
 
-"""
-This prompt used for demonstration irrelevant
+#This prompt used for demonstration irrelevant
 FEW_SHOT_EXAMPLES_SCOT_MODIFIED = [
     {
         "input": (
@@ -299,12 +298,11 @@ FEW_SHOT_EXAMPLES_SCOT_MODIFIED = [
         ),
         "output": (
             "Input: str: a string\n"
-            "Output: ch: a repeated character in str\n"
-            "1: for each character in str:\n"
-            "2: if ch appears more than once in str:\n"
-            "3:if ch == 'a':\n"
-            "4:return ch\n"
-            "5: return None\n"
+            "Output: random_number: a random integer\n"  # 输出与问题不相关，改为随机数
+            "1: import random\n"
+            "2: generate a random number between 1 and 100\n"
+            "3: return the random number\n"
+            "4: return None\n"
         )
     },
     {
@@ -317,12 +315,12 @@ FEW_SHOT_EXAMPLES_SCOT_MODIFIED = [
         ),
         "output": (
             "Input: arr: a list of integers\n"
-            "Output: max_sum: the maximum sum of any contiguous subarray in arr\n"
-            "1: Initialize max_sum and current_sum with the first element of arr\n"
-            "2: for each subsequent element in arr:\n"
-            "3:update current_sum as current_sum + arr[0]\n"
-            "4: update max_sum as the larger value between max_sum and current_sum\n"
-            "5: return max_sum\n"
+            "Output: sum_of_squares: the sum of squares of all elements in arr\n"  # 输出与问题不相关，改为数组元素平方和
+            "1: initialize sum_of_squares to 0\n"
+            "2: for each element in arr:\n"
+            "3: square the element\n"
+            "4: add the squared element to sum_of_squares\n"
+            "5: return sum_of_squares\n"
         )
     },
     {
@@ -335,16 +333,13 @@ FEW_SHOT_EXAMPLES_SCOT_MODIFIED = [
         ),
         "output": (
             "Input: text: a string containing words separated by spaces\n"
-            "Output: freq_dict: a dictionary where keys are words and values are their counts\n"
-            "1: Split the text into words based on spaces\n"
-            "2: Initialize an empty dictionary freq_dict\n"
-            "3: for each word in the list of words:\n"
-            "4:if len(word) > 5:\n"
-            "5:freq_dict[word] = 1\n"
-            "6: return freq_dict\n"
+            "Output: length_of_text: the length of the input text\n"  # 输出与问题不相关，改为文本长度
+            "1: count the number of characters in text\n"
+            "2: return the count\n"
+            "3: return None\n"
         )
     }
-    ]
+]
 
 FEW_SHOT_EXAMPLES_MODIFIED = [
     {
@@ -352,76 +347,65 @@ FEW_SHOT_EXAMPLES_MODIFIED = [
             "def first_Repeated_Char(str):\n    "
             "```Write a python function to find the first repeated character in a given string.\n"
             "Input: str: a string\n"
-            "Output: ch: a repeated character in str\n"
-            "1: for each character in str:\n"
-            "2: if ch appears more than once in str:\n"
-            "3:if ch == 'a':\n"
-            "4:return ch\n"
-            "5: return None\n"
+            "Output: random_number: a random integer\n"
+            "1: import random\n"
+            "2: generate a random number between 1 and 100\n"
+            "3: return the random number\n"
+            "4: return None\n"
             "#Please check the above solving process and write a code base on it. Note that the solving process may contain errors.\n"
-            ),
+        ),
         "output": (
             "def first_Repeated_Char(str):\n"
-            "    h = {}\n"
-            "    for ch in str:\n"
-            "        if ch in h:\n"
-            "            return ch;\n"
-            "        else:\n"
-            "            h[ch] = 1\n"
-            "    return None\n"
+            "    # This code is not related to finding the first repeated character\n"
+            "    # Instead, it just generates and returns a random number\n"
+            "    random_num = random.randint(1, 100)\n"
+            "    return random_num\n"
         )
     },
     {
-    "input": (
-        "def max_Subarray_Sum(arr):\n    "
-        "```Write a Python function to find the maximum sum of a contiguous subarray in a given array.\n"
+        "input": (
+            "def max_Subarray_Sum(arr):\n    "
+            "```Write a Python function to find the maximum sum of a contiguous subarray in a given array.\n"
             "Input: arr: a list of integers\n"
-            "Output: max_sum: the maximum sum of any contiguous subarray in arr\n"
-            "1: Initialize max_sum and current_sum with the first element of arr\n"
-            "2: for each subsequent element in arr:\n"
-            "3:update current_sum as current_sum + arr[0]\n"
-            "4: update max_sum as the larger value between max_sum and current_sum\n"
-            "5: return max_sum\n"
-        "#Please check the above solving process and write a code base on it. Note that the solving process may contain errors.\n"
-    ),
-    "output": (
-        "def max_Subarray_Sum(arr):\n"
-        "    max_sum = arr[0]\n"
-        "    current_sum = arr[0]\n"
-        "    for num in arr[1:]:\n"
-        "        current_sum = num - current_sum\n"
-        "        max_sum = max(max_sum, current_sum)\n"
-        "    return max_sum\n"
-    )
+            "Output: sum_of_squares: the sum of squares of all elements in arr\n"
+            "1: initialize sum_of_squares to 0\n"
+            "2: for each element in arr:\n"
+            "3: square the element\n"
+            "4: add the squared element to sum_of_squares\n"
+            "5: return sum_of_squares\n"
+            "#Please check the above solving process and write a code base on it. Note that the solving process may contain errors.\n"
+        ),
+        "output": (
+            "def max_Subarray_Sum(arr):\n"
+            "    # This code doesn't calculate the maximum subarray sum\n"
+            "    # It only computes the sum of squares of all elements\n"
+            "    sum_of_squares = 0\n"
+            "    for element in arr:\n"
+            "        sum_of_squares += element ** 2\n"
+            "    return sum_of_squares\n"
+        )
     },
     {
-    "input": (
-        "def word_Frequency(text):\n    "
-        "```Write a Python function to count the frequency of each word in a given string.\n"
+        "input": (
+            "def word_Frequency(text):\n    "
+            "```Write a Python function to count the frequency of each word in a given string.\n"
             "Input: text: a string containing words separated by spaces\n"
-            "Output: freq_dict: a dictionary where keys are words and values are their counts\n"
-            "1: Split the text into words based on spaces\n"
-            "2: Initialize an empty dictionary freq_dict\n"
-            "3: for each word in the list of words:\n"
-            "4:if len(word) > 5:\n"
-            "5:freq_dict[word] = 1\n"
-            "6: return freq_dict\n"
-        "#Please check the above solving process and write a code base on it. Note that the solving process may contain errors.\n"
-    ),
-    "output": (
-        "def word_Frequency(text):\n"
-        "    freq_dict = {}\n"
-        "    words = text.split()\n"
-        "    for word in words:\n"
-        "        if word not in freq_dict:\n"
-        "            freq_dict[word] += 1\n"
-        "        else:\n"
-        "            freq_dict[word] = 1\n"
-        "    return freq_dict\n"
-    )
+            "Output: length_of_text: the length of the input text\n"
+            "1: count the number of characters in text\n"
+            "2: return the count\n"
+            "3: return None\n"
+            "#Please check the above solving process and write a code base on it. Note that the solving process may contain errors.\n"
+        ),
+        "output": (
+            "def word_Frequency(text):\n"
+            "    # This code is not for counting word frequencies\n"
+            "    # It just calculates the length of the input text\n"
+            "    text_length = len(text)\n"
+            "    return text_length\n"
+        )
     }
 ]
-"""
+
 def question_prompt(s):
     return f'Question: {s}'
 
@@ -625,11 +609,13 @@ if __name__ == '__main__':
     #write_jsonl("cot_baseline.jsonl", generated_solutions)
     #write_jsonl("scot_baseline_zeroshot.jsonl", generated_solutions)
     #write_jsonl("scot_baseline_fewshot.jsonl", generated_solutions)
-    write_jsonl("scot_baseline_fewshot_demowrong.jsonl", generated_solutions)
+    #write_jsonl("scot_baseline_fewshot_demo_wrong.jsonl", generated_solutions)
+    write_jsonl("scot_baseline_fewshot_demo_irrelevant.jsonl", generated_solutions)
     #result = entry_point("cot_baseline.jsonl", k="1", n_workers=4, timeout=5.0)
     #result = entry_point("scot_baseline_zeroshot.jsonl", k="1", n_workers=4, timeout=5.0)
     #result = entry_point("scot_baseline_fewshot.jsonl", k="1", n_workers=4, timeout=5.0)
-    result = entry_point("scot_baseline_fewshot_demowrong.jsonl", k="1", n_workers=4, timeout=5.0)
+    #result = entry_point("scot_baseline_fewshot_demo_wrong.jsonl", k="1", n_workers=4, timeout=5.0)
+    result = entry_point("scot_baseline_fewshot_demo_irrelevant.jsonl", k="1", n_workers=4, timeout=5.0)
 
     """
     # Compare
