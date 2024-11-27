@@ -43,36 +43,94 @@ FEW_SHOT_EXAMPLES = [
     {
         "input": (
             "from typing import List\n\n"
-            "def find_largest_element(numbers: List[int]) -> int:\n"
-            "    \"\"\" Return the largest element in the given list of numbers.\n\n"
-            "    >>> find_largest_element([1, 2, 3, 4, 5])\n"
-            "    5\n"
-            "    >>> find_largest_element([-1, -5, -3])\n"
-            "    -1\n"
+            "def separate_paren_groups(paren_string: str) -> List[str]:\n"
+            "    \"\"\" Input to this function is a string containing multiple groups of nested parentheses. Your goal is to\n"
+            "    separate those group into separate strings and return the list of those.\n"
+            "    Separate groups are balanced (each open brace is properly closed) and not nested within each other\n"
+            "    Ignore any spaces in the input string.\n\n"
+            "    >>> separate_paren_groups('( ) (( )) (( )( ))')\n"
+            "    ['()', '(())', '(()())']\n"
             "    \"\"\"\n"
         ),
         "output": (
-            "def find_largest_element(numbers: List[int]) -> int:\n"
-            "    return max(numbers)\n"
+            "def separate_paren_groups(paren_string: str) -> List[str]:\n"
+            "    paren_string = paren_string.replace(' ', '')\n"
+            "    stack = []\n"
+            "    result = []\n"
+            "    group = ''\n"
+            "    for char in paren_string:\n"
+            "        group += char\n"
+            "        if char == '(':\n"
+            "            stack.append(char)\n"
+            "        elif char == ')':\n"
+            "            stack.pop()\n"
+            "            if not stack:\n"
+            "                result.append(group)\n"
+            "                group = ''\n"
+            "    return result\n"
+        )
+    },
+    {
+        "input": (
+            "def truncate_number(number: float) -> float:\n"
+            "    \"\"\" Given a positive floating point number, it can be decomposed into\n"
+            "    an integer part (largest integer smaller than given number) and decimals\n"
+            "    (leftover part always smaller than 1).\n\n"
+            "    Return the decimal part of the number.\n\n"
+            "    >>> truncate_number(3.5)\n"
+            "    0.5\n"
+            "    \"\"\"\n"
+        ),
+        "output": (
+            "def truncate_number(number: float) -> float:\n"
+            "    return number - int(number)\n"
         )
     },
     {
         "input": (
             "from typing import List\n\n"
-            "def get_even_numbers(numbers: List[int]) -> List[int]:\n"
-            "    \"\"\" Return a list of all even numbers from the given list.\n\n"
-            "    >>> get_even_numbers([1, 2, 3, 4, 5])\n"
-            "    [2, 4]\n"
-            "    >>> get_even_numbers([10, 15, 20, 25])\n"
-            "    [10, 20]\n"
+            "def below_zero(operations: List[int]) -> bool:\n"
+            "    \"\"\" You're given a list of deposit and withdrawal operations on a bank account that starts with\n"
+            "    zero balance. Your task is to detect if at any point the balance of account fallls below zero, and\n"
+            "    at that point function should return True. Otherwise it should return False.\n\n"
+            "    >>> below_zero([1, 2, 3])\n"
+            "    False\n"
+            "    >>> below_zero([1, 2, -4, 5])\n"
+            "    True\n"
             "    \"\"\"\n"
         ),
         "output": (
-            "def get_even_numbers(numbers: List[int]) -> List[int]:\n"
-            "    return [num for num in numbers if num % 2 == 0]\n"
+            "def below_zero(operations: List[int]) -> bool:\n"
+            "    balance = 0\n"
+            "    for op in operations:\n"
+            "        balance += op\n"
+            "        if balance < 0:\n"
+            "            return True\n"
+            "    return False\n"
+        )
+    },
+    {
+        "input": (
+            "from typing import List\n\n"
+            "def mean_absolute_deviation(numbers: List[float]) -> float:\n"
+            "    \"\"\" For a given list of input numbers, calculate Mean Absolute Deviation\n"
+            "    around the mean of this dataset.\n"
+            "    Mean Absolute Deviation is the average absolute difference between each\n"
+            "    element and a centerpoint (mean in this case):\n\n"
+            "    MAD = average | x - x_mean |\n\n"
+            "    >>> mean_absolute_deviation([1.0, 2.0, 3.0, 4.0])\n"
+            "    1.0\n"
+            "    \"\"\"\n"
+        ),
+        "output": (
+            "def mean_absolute_deviation(numbers: List[float]) -> float:\n"
+            "    mean = sum(numbers) / len(numbers)\n"
+            "    return sum(abs(x - mean) for x in numbers) / len(numbers)\n"
         )
     }
 ]
+
+
 
 
 def clean_the_wrap(code):
@@ -84,23 +142,21 @@ def clean_the_wrap(code):
             code = code[start_index + 3:end_index].replace("python", "")
     return code.strip()
 
-def question_prompt(s):
-    return f'Question: {s}'
 
 def construct_few_shot_chats(n):
     """Construct few-shot chats based on the FEW_SHOT_EXAMPLES."""
     chats = []
     for example in FEW_SHOT_EXAMPLES[:n]:
-        chats.append({"role": "user", "content": question_prompt(example["input"])})
+        chats.append({"role": "user", "content": example["input"]})
         chats.append({"role": "assistant", "content": example["output"]})
     return chats
 
-def code_generation_fewshot(prompt, n=3, retries=100, delay=1):
+def code_generation_fewshot(prompt, n=5, retries=100, delay=1):
     """Generate code using few-shot prompting with updated template."""
     global api_key_index
 
     few_shot_chats = construct_few_shot_chats(n)
-    new_chat = [{"role": "user", "content": question_prompt(prompt)}]
+    new_chat = [{"role": "user", "content": prompt}]
     chats = few_shot_chats + new_chat
     #print("CHATS\n",chats)
 
@@ -171,7 +227,7 @@ def experiment_with_demos(problems, max_demos=3):
         # Evaluate accuracy
         output_file = f"fewshot_{demo_count}.jsonl"
         write_jsonl(output_file, generated_solutions)
-        accuracy = entry_point(output_file, k="1", n_workers=4, timeout=5.0)
+        entry_point(output_file, k="1", n_workers=4, timeout=5.0)
 
         results.append({
             "demo_count": demo_count,
